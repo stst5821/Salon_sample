@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/5b114103c4.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="swiper.css" />
+
     <link rel=" stylesheet" href="style.scss">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -44,11 +47,27 @@
         <!-- home start -->
 
         <section id="home">
-            <div class="home_wrapper">
-                <p>
-                    home カルーセル
-                </p>
+
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="/images/Photo by Allie Smith on Unsplash.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
+
         </section>
 
         <!-- home end -->
@@ -475,9 +494,21 @@
                     <li><a href="#" class="link_w">Contact</a></li>
                 </ul>
                 <ul class="footer_list-social">
-                    <li><img src="img/twitter.svg" alt=""></li>
-                    <li><img src="img/facebook.svg" alt=""></li>
-                    <li><img src="img/instagram.svg" alt=""></li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter-square fa-3x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-square fa-3x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram fa-3x"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="footer_info">
@@ -490,11 +521,11 @@
             </div>
             <div class="footer_under">
                 <p class="footer_copy">
-                    Copyright © 2018 @haniwa008 All rights reserved.
+                    Copyright © 2020 @STADIO-Esty All rights reserved.
                 </p>
                 <div class="floating">
                     <a href="#">
-                        <img src="img/totop.svg" alt="#" class="footer_under-totop">
+                        <img src="/images/Arrow_top.svg" alt="#" class="footer_under-totop">
                     </a>
                 </div>
             </div>
@@ -504,7 +535,8 @@
 
     </div>
     <!-- javascript -->
-    <script src="javascript.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/javascript.js"></script>
 
 </body>
 
