@@ -553,14 +553,17 @@ footer {
   background: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#000000));
   background: linear-gradient(to bottom, #666666, #000000);
   /* BOXのグラデーション */
-  height: 338px;
+  height: 238px;
 }
 
 .footer_first {
-  padding-top: 7.4rem;
+  padding-top: 1.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 375px) {
@@ -572,7 +575,6 @@ footer {
 
 .footer_logo {
   width: 250px;
-  margin-left: 15.2rem;
 }
 
 @media (max-width: 375px) {
@@ -620,7 +622,7 @@ footer {
   }
 }
 
-.footer_list li:nth-child(5) {
+.footer_list li:nth-child(6) {
   margin-right: 0;
 }
 
@@ -662,6 +664,18 @@ footer {
   margin-top: 3rem;
 }
 
+.footer_info .footer_address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.footer_info .footer_address p {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
 @media (max-width: 375px) {
   .footer_info {
     text-align: center;
@@ -671,7 +685,7 @@ footer {
 .footer_p {
   font-size: 1.6rem;
   color: #fff;
-  margin-left: 15.4rem;
+  margin-left: 9.4rem;
   margin-bottom: 1.3rem;
 }
 
@@ -682,7 +696,7 @@ footer {
 }
 
 .footer_under {
-  margin-top: 9.1rem;
+  margin-top: 3.1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
