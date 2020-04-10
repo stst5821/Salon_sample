@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="swiper.css" />
 
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel=" stylesheet" href="style.scss">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -23,22 +25,22 @@
                 <div class="logo"><img src="images/logo1.png" alt=""></div>
                 <ul class="nav_lists">
                     <li class="nav_item">
-                        <a href="">Home</a>
+                        <a class="nav_btn" href="#home">Home</a>
                     </li>
                     <li class="nav_item">
-                        <a href="">Staff</a>
+                        <a class="nav_btn" href="#staff">Staff</a>
                     </li>
                     <li class="nav_item">
-                        <a href="">Style</a>
+                        <a class="nav_btn" href="#style">Style</a>
                     </li>
                     <li class="nav_item">
-                        <a href="">Price</a>
+                        <a class="nav_btn" href="#price">Price</a>
                     </li>
                     <li class="nav_item">
-                        <a href="">Calendar</a>
+                        <a class="nav_btn" href="#calendar">Calendar</a>
                     </li>
                     <li class="nav_item">
-                        <a href="">Access</a>
+                        <a class="nav_btn" href="#access">Access</a>
                     </li>
                 </ul>
             </div>
@@ -53,9 +55,7 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="/images/Photo by Allie Smith on Unsplash.jpg" alt="">
-                    </div>
+                    <div class="swiper-slide"></div>
                     <div class="swiper-slide">Slide 2</div>
                     <div class="swiper-slide">Slide 3</div>
                     ...
@@ -81,7 +81,6 @@
                 <li class="staff_list1">
                     <a class="staff_item" href="#">
                         <div class="staff_photo1">
-                            <img src="images/staff_img_01.jpg" alt="">
                         </div>
                         <div class="staff_data">
                             <p>Owner</p>
@@ -94,39 +93,36 @@
                 <li class="staff_list1">
                     <a class="staff_item" href="#">
                         <div class="staff_photo1">
-                            <img src="images/staff_img_01.jpg" alt="">
                         </div>
                         <div class="staff_data">
                             <p>Owner</p>
                             <p class="staff_name1">Dai Sato</p>
                             <p class="staff_name1-ja">佐藤 大</p>
-                            <p>more</p>
+                            <p class="staff_more">more</p>
                         </div>
                     </a>
                 </li>
                 <li class="staff_list1">
                     <a class="staff_item" href="#">
                         <div class="staff_photo1">
-                            <img src="images/staff_img_01.jpg" alt="">
                         </div>
                         <div class="staff_data">
                             <p>Owner</p>
                             <p class="staff_name1">Dai Sato</p>
                             <p class="staff_name1-ja">佐藤 大</p>
-                            <p>more</p>
+                            <p class="staff_more">more</p>
                         </div>
                     </a>
                 </li>
                 <li class="staff_list1">
                     <a class="staff_item" href="#">
                         <div class="staff_photo1">
-                            <img src="images/staff_img_01.jpg" alt="">
                         </div>
                         <div class="staff_data">
                             <p>Owner</p>
                             <p class="staff_name1">Dai Sato</p>
                             <p class="staff_name1-ja">佐藤 大</p>
-                            <p>more</p>
+                            <p class="staff_more">more</p>
                         </div>
                     </a>
                 </li>
@@ -142,22 +138,22 @@
             <h2>Style</h2>
             <ul class="styles">
                 <li class="styles_image">
-                    <img src="images/Hair_women.jpg" alt="">
+                    <div class="frame"><img src="images/Hair_women.jpg" alt=""></div>
                 </li>
                 <li class="styles_image">
-                    <img src="images/Hair_women.jpg" alt="">
+                    <div class="frameC"><img src="images/Photo by Allie Smith on Unsplash.jpg" alt=""></div>
                 </li>
                 <li class="styles_image">
-                    <img src="images/Hair_women.jpg" alt="">
+                    <div class="frameR"><img src="images/hairdresser-4634452_640.jpg" alt=""></div>
                 </li>
                 <li class="styles_image">
-                    <img src="images/Hair_women.jpg" alt="">
+                    <div class="frameR"><img src="images/hair-2885839_640.jpg" alt=""></div>
                 </li>
                 <li class="styles_image">
-                    <img src="images/Hair_women.jpg" alt="">
+                    <div class="frameC"><img src="images/Hair_women.jpg" alt=""></div>
                 </li>
                 <li class="styles_image">
-                    <img src="images/Hair_women.jpg" alt="">
+                    <div class="frameR"><img src="images/Hair_women.jpg" alt=""></div>
                 </li>
             </ul>
         </section>
@@ -213,7 +209,7 @@
 
                 <li class="price_cut">
                     <div class="price_cut-photo">
-                        <img src="images/hairdressing-salon-2693077_640.jpg" alt="">
+                        <img src="images/haircolor.png" alt="">
                     </div>
                     <div class="price_cut-fee">
                         <h3 class="cut">Color</h3>
@@ -456,25 +452,25 @@
 
         <!-- calendar end -->
 
-        <h2>Access</h2>
-        <div class="access_map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12961.947584801825!2d139.6921007!3d35.6896342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1665c37f38661e8!2z5p2x5Lqs6YO95bqB!5e0!3m2!1sja!2sjp!4v1586153179178!5m2!1sja!2sjp"
-                width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                tabindex="0"></iframe>
-            <div class="access_data">
-                <h3>Hair Saron Sample</h3>
-                <p>〒060-0042</p>
-                <p>札幌市中央区大通西15丁目1-13 ニューライフ大通公園1F</p>
-                <p>受付時間 / 10:00-19:00</p>
-                <p>定休日 / 毎週月曜日</p>
-                <p>TEL / 03-0000-0000</p>
-            </div>
-        </div>
+
         <!-- access start -->
 
         <section id="access">
-
+            <h2>Access</h2>
+            <div class="access_map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12961.947584801825!2d139.6921007!3d35.6896342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1665c37f38661e8!2z5p2x5Lqs6YO95bqB!5e0!3m2!1sja!2sjp!4v1586153179178!5m2!1sja!2sjp"
+                    width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+                <div class="access_data">
+                    <h3>Hair Saron Sample</h3>
+                    <p>〒060-0042</p>
+                    <p>札幌市中央区大通西15丁目1-13 ニューライフ大通公園1F</p>
+                    <p>受付時間 / 10:00-19:00</p>
+                    <p>定休日 / 毎週月曜日</p>
+                    <p>TEL / 03-0000-0000</p>
+                </div>
+            </div>
         </section>
 
         <!-- access end -->

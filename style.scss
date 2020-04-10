@@ -204,6 +204,16 @@ h2 {
     font-size: 4rem;
     text-align: center;
     font-family: "Crimson Text", serif;
+    margin-bottom: 5rem;
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        top: 130%;
+        right: 48%;
+        width: 50px;
+        border: 2px solid red;
+    }
 }
 
 h3 {
@@ -211,6 +221,10 @@ h3 {
     text-align: center;
     font-family: "Crimson Text", serif;
 }
+
+.active {
+    border-bottom: 1px solid red;
+  }
 
 ///////////////////////
 // メディアクエリ
@@ -250,7 +264,8 @@ header {
     background: #000;
     display: flex;
     justify-content: space-between;
-    // position: fixed;
+    position: fixed;
+    z-index: 100;
     width: 100%;
     font-size: 1.6rem;
 }
@@ -278,12 +293,17 @@ header {
 
 #home {
     height: 700px;
-    // background-color: blue;
 }
 
-.swiper-slide img {
-    width: 100%;
+.swiper-wrapper {
     height: 700px;
+}
+
+.swiper-slide {
+    background-image: url(images/Hair_women.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 
 /*********************************
@@ -291,47 +311,44 @@ header {
  *********************************/
 
 #staff {
-    height: 700px;
-    background-color: #fff;
-    margin: 5rem 4rem 0 4rem;
+    height: 800px;
+    background-color: #000;
+    h2 {
+        color: #fff;
+        padding-top: 4rem;
+    }
     .staff_lists {
-        // width: 800px;
         margin: 0 auto;
         list-style: none;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        :nth-child(even) {
-            margin-right: 0;
-        }
         li:not(:last-child) {
-            margin-bottom: 2rem;
+            margin-right: 2rem;
         }
     }
 
     .staff_list1 {
-        width: 50%;
+        width: 100px;
         margin: 0 1rem 1rem 0;
-        width: calc(50% - 10px);
+        width: calc(25% - 20px);
 
         .staff_item {
-            width: 100%;
             color: #000;
-            display: flex;
             .staff_data {
-                padding: 3rem 0 0 3rem;
-                width: 100%;
+                padding: 2rem 0 0 2rem;
                 font-size: 1.6rem;
                 background: #fff;
                 p {
-                    margin-bottom: 1.9rem;
+                    margin-bottom: 1rem;
                 }
+               
                 .staff_name1 {
                     font-size: 2.5rem;
                 }
                 .staff_more {
-                    margin-top: 10rem;
-                    text-align: right;
+                    margin-top: 6rem;
+                    padding-bottom: 2rem;
                 }
             }
         }
@@ -339,15 +356,21 @@ header {
 }
 
 .staff_photo1 {
-    height: 260px;
-    img {
-        height: 100%;
-    }
+    background-image: url(images/staff_img_01.jpg);
+    background-size: cover;
+    height: 400px;
 }
 
 /*********************************
  *    style                             
  *********************************/
+ 
+ #style {
+    margin-top: 8rem;
+    h2 {
+        padding-top: 4rem;
+    }
+ }
 
 .styles {
     display: flex;
@@ -357,15 +380,65 @@ header {
     .styles_image {
         margin: 0 1rem 1rem 0;
         width: calc(33.333333% - 10px);
+        height: 300px;
         img {
-            width: 100%;
+            width: 95%;
+            height: 300px;
+            object-fit: contain;
         }
     }
+}
+
+@mixin frame_mix {
+    position: absolute;
+	display: block;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 95%;
+	height: 95%;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	background: #fff;
+	z-index: -1;
+}
+
+.frame {
+	display: inline-block;
+	position: relative;
+}
+.frame:after {
+    @include frame_mix;
+    transform: rotate(3deg); /* 回転させる */
+}
+
+.frameR {
+	display: inline-block;
+	position: relative;
+}
+.frameR:after {
+    @include frame_mix;
+    transform: rotate(-2deg); /* 回転させる */
+}
+
+.frameC {
+	display: inline-block;
+	position: relative;
+}
+.frameC:after {
+    @include frame_mix;
+    transform: rotate(-0.5deg); /* 回転させる */
 }
 
 /*********************************
  *    Price                             
  *********************************/
+
+ #price {
+    margin-top: 8rem;
+    h2 {
+        padding-top: 4rem;
+    }
+ }
 
 .price_cut {
     display: flex;
@@ -429,6 +502,13 @@ table td {
  *    calender                             
  *********************************/
 
+ #calendar {
+    margin-top: 8rem;
+    h2 {
+        padding-top: 4rem;
+    }
+ }
+
 .calendar_wrapper {
     display: flex;
     justify-content: center;
@@ -474,7 +554,6 @@ table td {
     text-align: center;
     width: 42px;
     height: 42px;
-    // display: inline-block;
     float: left;
     overflow: hidden;
     line-height: 40px;
@@ -510,6 +589,14 @@ div[data-title]:hover:after {
 /*********************************
  *    Access                             
  *********************************/
+
+ #access {
+     height: 600px;
+     margin-top: 4rem;
+     h2 {
+        padding-top: 4rem;
+    }
+ }
 
 .access_map {
     display: flex;
@@ -628,7 +715,6 @@ footer {
     margin-top: 3.1rem;
     display: flex;
     justify-content: center;
-    padding-bottom: 3.1rem;
     position: relative;
     @include sp {
         margin-top: 5.1rem;

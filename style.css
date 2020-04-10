@@ -202,12 +202,27 @@ h2 {
   font-size: 4rem;
   text-align: center;
   font-family: "Crimson Text", serif;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+h2:after {
+  position: absolute;
+  content: "";
+  top: 130%;
+  right: 48%;
+  width: 50px;
+  border: 2px solid red;
 }
 
 h3 {
   font-size: 3.5rem;
   text-align: center;
   font-family: "Crimson Text", serif;
+}
+
+.active {
+  border-bottom: 1px solid red;
 }
 
 /*********************************
@@ -225,6 +240,8 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: fixed;
+  z-index: 100;
   width: 100%;
   font-size: 1.6rem;
 }
@@ -256,18 +273,27 @@ header {
   height: 700px;
 }
 
-.swiper-slide img {
-  width: 100%;
+.swiper-wrapper {
   height: 700px;
+}
+
+.swiper-slide {
+  background-image: url(images/Hair_women.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /*********************************
  *    staff                             
  *********************************/
 #staff {
-  height: 700px;
-  background-color: #fff;
-  margin: 5rem 4rem 0 4rem;
+  height: 800px;
+  background-color: #000;
+}
+
+#staff h2 {
+  color: #fff;
+  padding-top: 4rem;
 }
 
 #staff .staff_lists {
@@ -283,37 +309,28 @@ header {
           justify-content: center;
 }
 
-#staff .staff_lists :nth-child(even) {
-  margin-right: 0;
-}
-
 #staff .staff_lists li:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 
 #staff .staff_list1 {
-  width: 50%;
+  width: 100px;
   margin: 0 1rem 1rem 0;
-  width: calc(50% - 10px);
+  width: calc(25% - 20px);
 }
 
 #staff .staff_list1 .staff_item {
-  width: 100%;
   color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 #staff .staff_list1 .staff_item .staff_data {
-  padding: 3rem 0 0 3rem;
-  width: 100%;
+  padding: 2rem 0 0 2rem;
   font-size: 1.6rem;
   background: #fff;
 }
 
 #staff .staff_list1 .staff_item .staff_data p {
-  margin-bottom: 1.9rem;
+  margin-bottom: 1rem;
 }
 
 #staff .staff_list1 .staff_item .staff_data .staff_name1 {
@@ -321,21 +338,27 @@ header {
 }
 
 #staff .staff_list1 .staff_item .staff_data .staff_more {
-  margin-top: 10rem;
-  text-align: right;
+  margin-top: 6rem;
+  padding-bottom: 2rem;
 }
 
 .staff_photo1 {
-  height: 260px;
-}
-
-.staff_photo1 img {
-  height: 100%;
+  background-image: url(images/staff_img_01.jpg);
+  background-size: cover;
+  height: 400px;
 }
 
 /*********************************
  *    style                             
  *********************************/
+#style {
+  margin-top: 8rem;
+}
+
+#style h2 {
+  padding-top: 4rem;
+}
+
 .styles {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -349,15 +372,93 @@ header {
 .styles .styles_image {
   margin: 0 1rem 1rem 0;
   width: calc(33.333333% - 10px);
+  height: 300px;
 }
 
 .styles .styles_image img {
-  width: 100%;
+  width: 95%;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.frame {
+  display: inline-block;
+  position: relative;
+}
+
+.frame:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 95%;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+  /* 回転させる */
+}
+
+.frameR {
+  display: inline-block;
+  position: relative;
+}
+
+.frameR:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 95%;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+  /* 回転させる */
+}
+
+.frameC {
+  display: inline-block;
+  position: relative;
+}
+
+.frameC:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 95%;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: rotate(-0.5deg);
+          transform: rotate(-0.5deg);
+  /* 回転させる */
 }
 
 /*********************************
  *    Price                             
  *********************************/
+#price {
+  margin-top: 8rem;
+}
+
+#price h2 {
+  padding-top: 4rem;
+}
+
 .price_cut {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -438,6 +539,14 @@ table td {
 /*********************************
  *    calender                             
  *********************************/
+#calendar {
+  margin-top: 8rem;
+}
+
+#calendar h2 {
+  padding-top: 4rem;
+}
+
 .calendar_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,6 +632,15 @@ div[data-title]:hover:after {
 /*********************************
  *    Access                             
  *********************************/
+#access {
+  height: 600px;
+  margin-top: 4rem;
+}
+
+#access h2 {
+  padding-top: 4rem;
+}
+
 .access_map {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -703,7 +821,6 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 3.1rem;
   position: relative;
 }
 
