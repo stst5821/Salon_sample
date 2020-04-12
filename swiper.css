@@ -147,7 +147,7 @@
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
-  z-index: 10; /* マイナスにして矢印を裏に隠す */
+  z-index: -10; /* マイナスにして矢印を裏に隠す */
   cursor: pointer;
   display: flex;
   align-items: center;

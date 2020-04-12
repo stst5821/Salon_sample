@@ -269,12 +269,17 @@ header {
 /*********************************
  *    home                             
  *********************************/
-#home {
-  height: 700px;
+.swiper-container,
+.swiper-slide {
+  height: 100vh;
 }
 
-.swiper-wrapper {
-  height: 700px;
+.swiper-slide > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* IE: not support */
+  width: 100%;
+  height: 100%;
 }
 
 /*********************************
@@ -687,21 +692,8 @@ footer {
           justify-content: center;
 }
 
-@media (max-width: 375px) {
-  .footer_first {
-    display: block;
-    text-align: center;
-  }
-}
-
 .footer_logo {
   width: 250px;
-}
-
-@media (max-width: 375px) {
-  .footer_logo {
-    margin-left: 0rem;
-  }
 }
 
 .footer_list {
@@ -717,33 +709,13 @@ footer {
   margin-left: 15.9rem;
 }
 
-@media (max-width: 375px) {
-  .footer_list {
-    margin-left: 0rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-.footer_list li {
+li {
   margin-right: 3rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.footer_list li:hover {
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
-}
-
-@media (max-width: 375px) {
-  .footer_list li {
-    margin: 4rem 2rem 4rem 0;
-  }
-}
-
-.footer_list li:nth-child(6) {
+li:nth-child(6) {
   margin-right: 0;
 }
 
@@ -758,23 +730,8 @@ footer {
   display: flex;
 }
 
-@media (max-width: 375px) {
-  .footer_list-social {
-    margin-left: 0rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
 .footer_list-social li {
   margin-right: 1.6rem;
-}
-
-@media (max-width: 375px) {
-  .footer_list-social li {
-    margin-right: 3.6rem;
-  }
 }
 
 .footer_list-social li:nth-child(3) {
@@ -797,23 +754,11 @@ footer {
   color: #fff;
 }
 
-@media (max-width: 375px) {
-  .footer_info {
-    text-align: center;
-  }
-}
-
 .footer_p {
   font-size: 1.6rem;
   color: #fff;
   margin-left: 9.4rem;
   margin-bottom: 1.3rem;
-}
-
-@media (max-width: 375px) {
-  .footer_p {
-    margin-left: 0rem;
-  }
 }
 
 .footer_under {
@@ -825,12 +770,6 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-}
-
-@media (max-width: 375px) {
-  .footer_under {
-    margin-top: 5.1rem;
-  }
 }
 
 .footer_copy {
@@ -845,12 +784,6 @@ footer {
   right: 19px;
   /* 右寄せ */
   bottom: 19px;
-}
-
-@media (max-width: 375px) {
-  .footer_under-totop {
-    display: none;
-  }
 }
 
 .fa-twitter-square {

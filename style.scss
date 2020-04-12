@@ -291,12 +291,14 @@ header {
  *    home                             
  *********************************/
 
-#home {
-    height: 700px;
+.swiper-container,
+.swiper-slide {
+    height: 100vh;
 }
-
-.swiper-wrapper {
-    height: 700px;
+.swiper-slide > img {
+    object-fit: cover; /* IE: not support */
+    width: 100%;
+    height: 100%;
 }
 
 /*********************************
@@ -629,17 +631,10 @@ footer {
     padding-top: 1.4rem;
     display: flex;
     justify-content: center;
-    @include sp {
-        display: block;
-        text-align: center;
-    }
 }
 
 .footer_logo {
     width: 250px;
-    @include sp {
-        margin-left: 0rem;
-    }
 }
 
 .footer_list {
@@ -649,39 +644,22 @@ footer {
     display: flex;
     align-items: center;
     margin-left: 15.9rem;
-    @include sp {
-        margin-left: 0rem;
-        justify-content: center;
     }
     li {
         margin-right: 3rem;
         transition: 0.3s;
-        &:hover {
-            transform: rotate(5deg);
-        }
-        @include sp {
-            margin: 4rem 2rem 4rem 0;
-        }
         &:nth-child(6) {
             margin-right: 0;
         }
     }
-}
 
 .footer_list-social {
     list-style: none;
     align-items: center;
     margin-left: 22.4rem;
     display: flex;
-    @include sp {
-        margin-left: 0rem;
-        justify-content: center;
-    }
     li {
         margin-right: 1.6rem;
-        @include sp {
-            margin-right: 3.6rem;
-        }
         &:nth-child(3) {
             margin-right: 0;
         }
@@ -698,9 +676,6 @@ footer {
             color: #fff;
         }
     }
-    @include sp {
-        text-align: center;
-    }
 }
 
 .footer_p {
@@ -708,9 +683,6 @@ footer {
     color: #fff;
     margin-left: 9.4rem;
     margin-bottom: 1.3rem;
-    @include sp {
-        margin-left: 0rem;
-    }
 }
 
 .footer_under {
@@ -718,9 +690,6 @@ footer {
     display: flex;
     justify-content: center;
     position: relative;
-    @include sp {
-        margin-top: 5.1rem;
-    }
 }
 
 .footer_copy {
@@ -735,9 +704,6 @@ footer {
     position: absolute;
     right: 19px; /* 右寄せ */
     bottom: 19px;
-    @include sp {
-        display: none;
-    }
 }
 
 .fa-twitter-square {
