@@ -212,7 +212,7 @@ h2 {
         top: 130%;
         right: 48%;
         width: 50px;
-        border: 2px solid red;
+        border: 2px solid #35bec4;
     }
 }
 
@@ -223,8 +223,8 @@ h3 {
 }
 
 .active {
-    border-bottom: 1px solid red;
-  }
+    border-bottom: 1.5px solid #35bec4;
+}
 
 ///////////////////////
 // メディアクエリ
@@ -299,13 +299,6 @@ header {
     height: 700px;
 }
 
-.swiper-slide {
-    background-image: url(images/Hair_women.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
-
 /*********************************
  *    staff                             
  *********************************/
@@ -342,7 +335,7 @@ header {
                 p {
                     margin-bottom: 1rem;
                 }
-               
+
                 .staff_name1 {
                     font-size: 2.5rem;
                 }
@@ -364,13 +357,13 @@ header {
 /*********************************
  *    style                             
  *********************************/
- 
- #style {
+
+#style {
     margin-top: 8rem;
     h2 {
         padding-top: 4rem;
     }
- }
+}
 
 .styles {
     display: flex;
@@ -391,20 +384,20 @@ header {
 
 @mixin frame_mix {
     position: absolute;
-	display: block;
-	content: "";
-	top: 0;
-	left: 0;
-	width: 95%;
-	height: 95%;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-	background: #fff;
-	z-index: -1;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    z-index: -1;
 }
 
 .frame {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
 }
 .frame:after {
     @include frame_mix;
@@ -412,8 +405,8 @@ header {
 }
 
 .frameR {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
 }
 .frameR:after {
     @include frame_mix;
@@ -421,8 +414,8 @@ header {
 }
 
 .frameC {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
 }
 .frameC:after {
     @include frame_mix;
@@ -433,12 +426,12 @@ header {
  *    Price                             
  *********************************/
 
- #price {
+#price {
     margin-top: 8rem;
     h2 {
         padding-top: 4rem;
     }
- }
+}
 
 .price_cut {
     display: flex;
@@ -502,12 +495,12 @@ table td {
  *    calender                             
  *********************************/
 
- #calendar {
+#calendar {
     margin-top: 8rem;
     h2 {
         padding-top: 4rem;
     }
- }
+}
 
 .calendar_wrapper {
     display: flex;
@@ -586,17 +579,26 @@ div[data-title]:hover:after {
     max-width: 150px;
 }
 
+.calendar_close {
+    margin-left: 16rem;
+    margin-top: 3rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    border-bottom: 2px solid red;
+}
+
 /*********************************
  *    Access                             
  *********************************/
 
- #access {
-     height: 600px;
-     margin-top: 4rem;
-     h2 {
+#access {
+    height: 600px;
+    margin-top: 4rem;
+    h2 {
         padding-top: 4rem;
     }
- }
+}
 
 .access_map {
     display: flex;
@@ -746,4 +748,21 @@ footer {
 }
 .fa-instagram {
     color: #d93177;
+}
+
+.floating {
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    display: none;
+}
+.floating a {
+    display: block;
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    opacity: 0.6;
+}
+.floating a:hover {
+    opacity: 1;
 }

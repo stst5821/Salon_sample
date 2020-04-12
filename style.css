@@ -212,7 +212,7 @@ h2:after {
   top: 130%;
   right: 48%;
   width: 50px;
-  border: 2px solid red;
+  border: 2px solid #35bec4;
 }
 
 h3 {
@@ -222,7 +222,7 @@ h3 {
 }
 
 .active {
-  border-bottom: 1px solid red;
+  border-bottom: 1.5px solid #35bec4;
 }
 
 /*********************************
@@ -275,12 +275,6 @@ header {
 
 .swiper-wrapper {
   height: 700px;
-}
-
-.swiper-slide {
-  background-image: url(images/Hair_women.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 /*********************************
@@ -629,6 +623,15 @@ div[data-title]:hover:after {
   max-width: 150px;
 }
 
+.calendar_close {
+  margin-left: 16rem;
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.6rem;
+  display: inline-block;
+  border-bottom: 2px solid red;
+}
+
 /*********************************
  *    Access                             
  *********************************/
@@ -860,5 +863,24 @@ footer {
 
 .fa-instagram {
   color: #d93177;
+}
+
+.floating {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  display: none;
+}
+
+.floating a {
+  display: block;
+  color: #fff;
+  background: #000;
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.floating a:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
