@@ -348,6 +348,92 @@ header {
 }
 
 /*********************************
+ *    concept                             
+ *********************************/
+#concept {
+  background: #ffe3ed;
+}
+
+#concept h2 {
+  padding-top: 4rem;
+}
+
+.concept_lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.consept_imgL {
+  background-image: url(images/woman-and-child.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25vw;
+  height: 60vh;
+}
+
+.concept_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.concept_top .consept_imgT img {
+  width: 33.3vw;
+}
+
+.concept_main {
+  width: 50vw;
+  height: 60vh;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.concept_main .concept_txt h3 {
+  margin-bottom: 3rem;
+}
+
+.concept_main .concept_txt p {
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.concept_main .concept_txt p:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-image: url(images/check.svg);
+}
+
+.consept_imgR {
+  background-image: url(images/womenbackhair.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25vw;
+  height: 60vh;
+}
+
+/*********************************
  *    style                             
  *********************************/
 #style {
@@ -658,6 +744,11 @@ div[data-title]:hover:after {
           justify-content: center;
 }
 
+.access_map iframe {
+  width: 40vw;
+  height: 50vh;
+}
+
 .access_map .access_data {
   text-align-last: left;
   margin-left: 3rem;
@@ -709,13 +800,13 @@ footer {
   margin-left: 15.9rem;
 }
 
-li {
+.footer_list li {
   margin-right: 3rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-li:nth-child(6) {
+.footer_list li:nth-child(6) {
   margin-right: 0;
 }
 
