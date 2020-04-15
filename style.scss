@@ -334,7 +334,7 @@ $sp: 375px; // スマホ
             flex-direction: column;
             align-items: center;
         }
-        li{
+        li {
             margin-right: 2rem;
             @include sp {
                 margin-right: 0rem;
@@ -402,6 +402,7 @@ $sp: 375px; // スマホ
     display: flex;
     list-style: none;
     align-items: center;
+    justify-content: center;
 }
 
 .concept_imgL {
@@ -410,6 +411,9 @@ $sp: 375px; // スマホ
     background-size: cover;
     width: 25vw;
     @include center_height;
+    @include sp {
+        display: none;
+    }
 }
 
 .concept_top {
@@ -456,6 +460,9 @@ $sp: 375px; // スマホ
     background-size: cover;
     width: 25vw;
     @include center_height;
+    @include sp {
+        display: none;
+    }
 }
 
 /*********************************
@@ -471,16 +478,19 @@ $sp: 375px; // スマホ
 
 .styles {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     margin: 5rem 4rem 0 4rem;
     .styles_image {
-        margin: 0 1rem 1rem 0;
-        width: calc(33.333333% - 10px);
-        height: 300px;
+        margin: 0 0rem 5rem 0;
+        width: 450px;
+        @include sp {
+            margin: 0 0 1rem 0;
+        }
         img {
             width: 95%;
-            height: 300px;
+            height: 30vh;
             object-fit: contain;
         }
     }
@@ -541,19 +551,36 @@ $sp: 375px; // スマホ
     display: flex;
     font-size: 1.6rem;
     margin: 5rem 4rem 0 4rem;
+    @include sp {
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+    }
     &:nth-child(even) {
         flex-direction: row-reverse;
+        @include sp {
+            flex-direction: column;
+        }
     }
     .price_cut-photo {
         width: 50%;
+        @include sp {
+            width: 100%;
+        }
         img {
             width: 100%;
         }
     }
     .price_cut-fee {
         width: 50%;
+        @include sp {
+            width: 100%;
+        }
         .cut {
             margin-bottom: 3rem;
+            @include sp {
+                margin-top: 3rem;
+            }
         }
     }
 }
@@ -574,7 +601,7 @@ table {
 table th {
     position: relative;
     text-align: left;
-    width: 30%;
+    width: 200px;
     padding-bottom: 2rem;
 }
 
@@ -586,6 +613,10 @@ table th:after {
     position: absolute;
     top: 6px;
     right: -170px;
+    @include sp {
+        width: 70px;
+        right: -80px;
+    }
 }
 
 table td {
@@ -593,6 +624,10 @@ table td {
     width: 65%;
     padding-bottom: 1rem;
     padding-left: 19rem;
+    @include sp {
+        text-align: right;
+        padding-left: 0rem;
+    }
 }
 
 /*********************************
@@ -811,7 +846,7 @@ footer {
     right: 19px; /* 右寄せ */
     bottom: 19px;
     @include sp {
-       display: none;
+        display: none;
     }
 }
 
