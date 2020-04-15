@@ -1,5 +1,5 @@
 var swiper = new Swiper('.swiper-container', {
-  
+
   autoplay: {
     delay: 5000,
     stopOnLastSlide: false,
@@ -53,4 +53,9 @@ jQuery('.floating').click(function () {
     scrollTop: 0
   }, 500);
   return false;
+});
+
+// ドロワーメニュー
+$(document).ready(function () {
+  $('.drawer').drawer();
 });

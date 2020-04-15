@@ -228,8 +228,14 @@ h3 {
 /*********************************
  *    nav                         
  *********************************/
-header {
-  height: 100px;
+.drawer-hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .drawer-hamburger {
+    display: block;
+  }
 }
 
 #nav {
@@ -240,15 +246,19 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
   z-index: 100;
   width: 100%;
   font-size: 1.6rem;
+  height: 14vh;
 }
 
 .logo img {
-  width: auto;
-  height: 100px;
+  width: 70vw;
+  max-width: 45rem;
 }
 
 .nav_lists {
@@ -262,8 +272,15 @@ header {
   list-style: none;
 }
 
+@media (max-width: 768px) {
+  .nav_lists {
+    display: none;
+  }
+}
+
 .nav_lists .nav_item {
   margin-right: 2rem;
+  font-size: 1.6rem;
 }
 
 /*********************************
@@ -274,10 +291,16 @@ header {
   height: 100vh;
 }
 
+@media (max-width: 375px) {
+  .swiper-container,
+  .swiper-slide {
+    height: 60vh;
+  }
+}
+
 .swiper-slide > img {
   -o-object-fit: cover;
      object-fit: cover;
-  /* IE: not support */
   width: 100%;
   height: 100%;
 }
@@ -286,7 +309,6 @@ header {
  *    staff                             
  *********************************/
 #staff {
-  height: 800px;
   background-color: #000;
 }
 
@@ -296,7 +318,7 @@ header {
 }
 
 #staff .staff_lists {
-  margin: 0 auto;
+  border: solid 2px red;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -308,43 +330,84 @@ header {
           justify-content: center;
 }
 
-#staff .staff_lists li:not(:last-child) {
+@media (max-width: 375px) {
+  #staff .staff_lists {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#staff .staff_lists li {
   margin-right: 2rem;
 }
 
+@media (max-width: 375px) {
+  #staff .staff_lists li {
+    margin-right: 0rem;
+  }
+}
+
 #staff .staff_list1 {
-  width: 100px;
   margin: 0 1rem 1rem 0;
-  width: calc(25% - 20px);
+  width: 350px;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-#staff .staff_list1 .staff_item {
-  color: #000;
+@media (max-width: 375px) {
+  #staff .staff_list1 {
+    height: 100%;
+  }
 }
 
-#staff .staff_list1 .staff_item .staff_data {
+#staff .staff_list1 .staff_photo1 {
+  background-image: url(images/womenJP_Hairdresser.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+@media (max-width: 375px) {
+  #staff .staff_list1 .staff_photo1 {
+    height: 40vh;
+  }
+}
+
+#staff .staff_list1 .staff_data {
   padding: 2rem 0 0 2rem;
   font-size: 1.6rem;
   background: #fff;
+  height: 20vh;
 }
 
-#staff .staff_list1 .staff_item .staff_data p {
+@media (max-width: 375px) {
+  #staff .staff_list1 .staff_data {
+    height: 20vh;
+  }
+}
+
+#staff .staff_list1 .staff_data p {
   margin-bottom: 1rem;
 }
 
-#staff .staff_list1 .staff_item .staff_data .staff_name1 {
+#staff .staff_list1 .staff_data .staff_name1 {
   font-size: 2.5rem;
 }
 
-#staff .staff_list1 .staff_item .staff_data .staff_more {
+#staff .staff_list1 .staff_data .staff_more {
   margin-top: 6rem;
   padding-bottom: 2rem;
-}
-
-.staff_photo1 {
-  background-image: url(images/staff_img_01.jpg);
-  background-size: cover;
-  height: 400px;
 }
 
 /*********************************
@@ -368,7 +431,7 @@ header {
           align-items: center;
 }
 
-.consept_imgL {
+.concept_imgL {
   background-image: url(images/woman-and-child.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -382,7 +445,7 @@ header {
   display: flex;
 }
 
-.concept_top .consept_imgT img {
+.concept_top .concept_imgT img {
   width: 33.3vw;
 }
 
@@ -425,7 +488,7 @@ header {
   background-image: url(images/check.svg);
 }
 
-.consept_imgR {
+.concept_imgR {
   background-image: url(images/womenbackhair.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -875,6 +938,12 @@ footer {
   right: 19px;
   /* 右寄せ */
   bottom: 19px;
+}
+
+@media (max-width: 375px) {
+  .footer_under-totop {
+    display: none;
+  }
 }
 
 .fa-twitter-square {

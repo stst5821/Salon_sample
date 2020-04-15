@@ -256,24 +256,29 @@ $sp: 375px; // スマホ
  *    nav                         
  *********************************/
 
-header {
-    height: 100px;
+.drawer-hamburger {
+    display: none;
+    @include tab {
+        display: block;
+    }
 }
 
 #nav {
     background: #000;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     z-index: 100;
     width: 100%;
     font-size: 1.6rem;
+    height: 14vh;
 }
 
 .logo {
     img {
-        width: auto;
-        height: 100px;
+        width: 70vw;
+        max-width: 45rem;
     }
 }
 
@@ -282,8 +287,13 @@ header {
     display: flex;
     align-items: center;
     list-style: none;
+    @include tab {
+        display: none;
+    }
+
     .nav_item {
         margin-right: 2rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -294,9 +304,12 @@ header {
 .swiper-container,
 .swiper-slide {
     height: 100vh;
+    @include sp {
+        height: 60vh;
+    }
 }
 .swiper-slide > img {
-    object-fit: cover; /* IE: not support */
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -306,61 +319,75 @@ header {
  *********************************/
 
 #staff {
-    height: 800px;
     background-color: #000;
     h2 {
         color: #fff;
         padding-top: 4rem;
     }
     .staff_lists {
-        margin: 0 auto;
+        border: solid 2px red;
         list-style: none;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        li:not(:last-child) {
+        @include sp {
+            flex-direction: column;
+            align-items: center;
+        }
+        li{
             margin-right: 2rem;
+            @include sp {
+                margin-right: 0rem;
+            }
         }
     }
 
     .staff_list1 {
-        width: 100px;
         margin: 0 1rem 1rem 0;
-        width: calc(25% - 20px);
+        width: 350px;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        @include sp {
+            height: 100%;
+        }
+        .staff_photo1 {
+            background-image: url(images/womenJP_Hairdresser.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 60vh;
+            @include sp {
+                height: 40vh;
+            }
+        }
+        .staff_data {
+            padding: 2rem 0 0 2rem;
+            font-size: 1.6rem;
+            background: #fff;
+            height: 20vh;
+            @include sp {
+                height: 20vh;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
 
-        .staff_item {
-            color: #000;
-            .staff_data {
-                padding: 2rem 0 0 2rem;
-                font-size: 1.6rem;
-                background: #fff;
-                p {
-                    margin-bottom: 1rem;
-                }
-
-                .staff_name1 {
-                    font-size: 2.5rem;
-                }
-                .staff_more {
-                    margin-top: 6rem;
-                    padding-bottom: 2rem;
-                }
+            .staff_name1 {
+                font-size: 2.5rem;
+            }
+            .staff_more {
+                margin-top: 6rem;
+                padding-bottom: 2rem;
             }
         }
     }
-}
-
-.staff_photo1 {
-    background-image: url(images/staff_img_01.jpg);
-    background-size: cover;
-    height: 400px;
 }
 
 /*********************************
  *    concept                             
  *********************************/
 
- @mixin center_height {
+@mixin center_height {
     height: 60vh;
 }
 
@@ -377,7 +404,7 @@ header {
     align-items: center;
 }
 
-.consept_imgL {
+.concept_imgL {
     background-image: url(images/woman-and-child.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -387,7 +414,7 @@ header {
 
 .concept_top {
     display: flex;
-    .consept_imgT {
+    .concept_imgT {
         img {
             width: 33.3vw;
         }
@@ -423,7 +450,7 @@ header {
     }
 }
 
-.consept_imgR {
+.concept_imgR {
     background-image: url(images/womenbackhair.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -783,6 +810,9 @@ footer {
     position: absolute;
     right: 19px; /* 右寄せ */
     bottom: 19px;
+    @include sp {
+       display: none;
+    }
 }
 
 .fa-twitter-square {
