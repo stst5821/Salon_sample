@@ -257,8 +257,8 @@ h3 {
 }
 
 .logo img {
-  width: 70vw;
-  max-width: 45rem;
+  max-width: 70vw;
+  max-height: 14vh;
 }
 
 .nav_lists {
@@ -318,7 +318,6 @@ h3 {
 }
 
 #staff .staff_lists {
-  border: solid 2px red;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -354,7 +353,7 @@ h3 {
 
 #staff .staff_list1 {
   margin: 0 1rem 1rem 0;
-  width: 350px;
+  width: 300px;
   height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -388,16 +387,16 @@ h3 {
   padding: 2rem 0 0 2rem;
   font-size: 1.6rem;
   background: #fff;
-  height: 20vh;
+  height: 30vh;
 }
 
 @media (max-width: 375px) {
   #staff .staff_list1 .staff_data {
-    height: 20vh;
+    height: 30vh;
   }
 }
 
-#staff .staff_list1 .staff_data p {
+#staff .staff_list1 .staff_data p:not(:last-child) {
   margin-bottom: 1rem;
 }
 
@@ -406,8 +405,7 @@ h3 {
 }
 
 #staff .staff_list1 .staff_data .staff_more {
-  margin-top: 6rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
 }
 
 /*********************************
@@ -475,6 +473,12 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 375px) {
+  .concept_main {
+    width: 100%;
+  }
 }
 
 .concept_main .concept_txt h3 {
@@ -776,14 +780,29 @@ table td {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 4rem;
 }
 
+@media (max-width: 375px) {
+  .calendar_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .jzdbox1 {
   width: 315px;
+  min-width: 315px;
   background: #332f2e;
   border-radius: 5px;
   overflow: hidden;
@@ -791,7 +810,13 @@ table td {
   margin-bottom: 10px;
   -webkit-box-shadow: 0 0 10px #201d1c;
           box-shadow: 0 0 10px #201d1c;
-  margin: 0 2rem;
+  margin: 0 2rem 4rem 2rem;
+}
+
+@media (max-width: 375px) {
+  .jzdbox1 {
+    margin-bottom: 4rem;
+  }
 }
 
 .jzdcal {
@@ -804,7 +829,7 @@ table td {
 }
 
 .jzdcalt {
-  font: 18px "Roboto";
+  font: 2rem "Roboto";
   font-weight: 700;
   color: #f7f3eb;
   display: block;
@@ -815,7 +840,7 @@ table td {
 }
 
 .jzdcal span {
-  font: 11px "Roboto";
+  font: 1.6rem "Roboto";
   font-weight: 400;
   color: #f7f3eb;
   text-align: center;
@@ -855,8 +880,10 @@ div[data-title]:hover:after {
 }
 
 .calendar_close {
-  margin-left: 16rem;
-  margin-top: 3rem;
+  margin: 0 10rem;
+}
+
+.calendar_close p {
   padding-bottom: 0.5rem;
   font-size: 1.6rem;
   display: inline-block;
@@ -867,7 +894,6 @@ div[data-title]:hover:after {
  *    Access                             
  *********************************/
 #access {
-  height: 600px;
   margin-top: 4rem;
 }
 
@@ -884,14 +910,36 @@ div[data-title]:hover:after {
           justify-content: center;
 }
 
+@media (max-width: 375px) {
+  .access_map {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .access_map iframe {
   width: 40vw;
   height: 50vh;
 }
 
+@media (max-width: 375px) {
+  .access_map iframe {
+    width: 95vw;
+    margin: 0 auto;
+  }
+}
+
 .access_map .access_data {
   text-align-last: left;
   margin-left: 3rem;
+}
+
+@media (max-width: 375px) {
+  .access_map .access_data {
+    margin: 4rem auto 4rem auto;
+  }
 }
 
 .access_map .access_data h3 {
@@ -918,9 +966,20 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media (max-width: 375px) {
+  .footer_first {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .footer_logo {
@@ -937,7 +996,12 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 15.9rem;
+}
+
+@media (max-width: 375px) {
+  .footer_list {
+    display: none;
+  }
 }
 
 .footer_list li {
@@ -955,10 +1019,15 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 22.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 375px) {
+  .footer_list-social {
+    margin: 2rem 0;
+  }
 }
 
 .footer_list-social li {
@@ -971,6 +1040,12 @@ footer {
 
 .footer_info {
   margin-top: 3rem;
+}
+
+@media (max-width: 375px) {
+  .footer_info {
+    display: none;
+  }
 }
 
 .footer_info .footer_address {
@@ -988,24 +1063,18 @@ footer {
 .footer_p {
   font-size: 1.6rem;
   color: #fff;
-  margin-left: 9.4rem;
   margin-bottom: 1.3rem;
 }
 
 .footer_under {
   margin-top: 3.1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: relative;
 }
 
 .footer_copy {
   font-size: 1.4rem;
   color: #ffffff;
+  text-align: center;
 }
 
 .footer_under-totop {

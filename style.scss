@@ -277,8 +277,8 @@ $sp: 375px; // スマホ
 
 .logo {
     img {
-        width: 70vw;
-        max-width: 45rem;
+        max-width: 70vw;
+        max-height: 14vh;
     }
 }
 
@@ -325,7 +325,6 @@ $sp: 375px; // スマホ
         padding-top: 4rem;
     }
     .staff_lists {
-        border: solid 2px red;
         list-style: none;
         display: flex;
         flex-wrap: wrap;
@@ -344,7 +343,7 @@ $sp: 375px; // スマホ
 
     .staff_list1 {
         margin: 0 1rem 1rem 0;
-        width: 350px;
+        width: 300px;
         height: 80vh;
         display: flex;
         flex-direction: column;
@@ -364,20 +363,18 @@ $sp: 375px; // スマホ
             padding: 2rem 0 0 2rem;
             font-size: 1.6rem;
             background: #fff;
-            height: 20vh;
+            height: 30vh;
             @include sp {
-                height: 20vh;
+                height: 30vh;
             }
-            p {
+            p:not(:last-child) {
                 margin-bottom: 1rem;
             }
-
             .staff_name1 {
                 font-size: 2.5rem;
             }
             .staff_more {
-                margin-top: 6rem;
-                padding-bottom: 2rem;
+                padding-top: 3rem;
             }
         }
     }
@@ -433,6 +430,9 @@ $sp: 375px; // スマホ
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include sp {
+        width: 100%;
+    }
     .concept_txt {
         h3 {
             margin-bottom: 3rem;
@@ -643,19 +643,28 @@ table td {
 
 .calendar_wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 4rem;
+    @include sp {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .jzdbox1 {
     width: 315px;
+    min-width: 315px;
     background: #332f2e;
     border-radius: 5px;
     overflow: hidden;
     display: block;
     margin-bottom: 10px;
     box-shadow: 0 0 10px #201d1c;
-    margin: 0 2rem;
+    margin: 0 2rem 4rem 2rem;
+    @include sp {
+        margin-bottom: 4rem;
+    }
 }
 
 .jzdcal {
@@ -669,7 +678,7 @@ table td {
 }
 
 .jzdcalt {
-    font: 18px "Roboto";
+    font: 2rem "Roboto";
     font-weight: 700;
     color: #f7f3eb;
     display: block;
@@ -680,7 +689,7 @@ table td {
 }
 
 .jzdcal span {
-    font: 11px "Roboto";
+    font: 1.6rem "Roboto";
     font-weight: 400;
     color: #f7f3eb;
     text-align: center;
@@ -719,12 +728,13 @@ div[data-title]:hover:after {
 }
 
 .calendar_close {
-    margin-left: 16rem;
-    margin-top: 3rem;
-    padding-bottom: 0.5rem;
-    font-size: 1.6rem;
-    display: inline-block;
-    border-bottom: 2px solid red;
+    margin: 0 10rem;
+    p {
+        padding-bottom: 0.5rem;
+        font-size: 1.6rem;
+        display: inline-block;
+        border-bottom: 2px solid red;
+    }
 }
 
 /*********************************
@@ -732,7 +742,6 @@ div[data-title]:hover:after {
  *********************************/
 
 #access {
-    height: 600px;
     margin-top: 4rem;
     h2 {
         padding-top: 4rem;
@@ -742,13 +751,23 @@ div[data-title]:hover:after {
 .access_map {
     display: flex;
     justify-content: center;
+    @include sp {
+        flex-direction: column;
+    }
     iframe {
         width: 40vw;
         height: 50vh;
+        @include sp {
+            width: 95vw;
+            margin: 0 auto;
+        }
     }
     .access_data {
         text-align-last: left;
         margin-left: 3rem;
+        @include sp {
+            margin: 4rem auto 4rem auto;
+        }
         h3 {
             margin-bottom: 2rem;
         }
@@ -771,7 +790,11 @@ footer {
 .footer_first {
     padding-top: 1.4rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    @include sp {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .footer_logo {
@@ -784,7 +807,9 @@ footer {
     color: #fff;
     display: flex;
     align-items: center;
-    margin-left: 15.9rem;
+    @include sp {
+        display: none;
+    }
     li {
         margin-right: 3rem;
         transition: 0.3s;
@@ -797,8 +822,10 @@ footer {
 .footer_list-social {
     list-style: none;
     align-items: center;
-    margin-left: 22.4rem;
     display: flex;
+    @include sp {
+        margin: 2rem 0;
+    }
     li {
         margin-right: 1.6rem;
         &:nth-child(3) {
@@ -809,6 +836,9 @@ footer {
 
 .footer_info {
     margin-top: 3rem;
+    @include sp {
+        display: none;
+    }
     .footer_address {
         display: flex;
         margin-bottom: 1rem;
@@ -822,21 +852,20 @@ footer {
 .footer_p {
     font-size: 1.6rem;
     color: #fff;
-    margin-left: 9.4rem;
+    // margin-left: 9.4rem;
     margin-bottom: 1.3rem;
 }
 
 .footer_under {
     margin-top: 3.1rem;
-    display: flex;
-    justify-content: center;
+    // margin: 0 1rem;
     position: relative;
 }
 
 .footer_copy {
-    // width: 324px;
     font-size: 1.4rem;
     color: #ffffff;
+    text-align: center;
 }
 
 .footer_under-totop {
