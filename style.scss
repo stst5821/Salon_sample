@@ -787,9 +787,17 @@ footer {
     height: 238px;
 }
 
+.footer_w {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .footer_first {
     padding-top: 1.4rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     @include sp {
         flex-direction: column;
@@ -852,13 +860,10 @@ footer {
 .footer_p {
     font-size: 1.6rem;
     color: #fff;
-    // margin-left: 9.4rem;
-    margin-bottom: 1.3rem;
 }
 
 .footer_under {
-    margin-top: 3.1rem;
-    // margin: 0 1rem;
+    margin-top: 2rem;
     position: relative;
 }
 
@@ -866,6 +871,7 @@ footer {
     font-size: 1.4rem;
     color: #ffffff;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .footer_under-totop {
