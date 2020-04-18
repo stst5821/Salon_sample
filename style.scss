@@ -182,6 +182,8 @@ html {
 
 html {
     font-size: 62.5%;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+    font-weight: 500;
 }
 
 a {
@@ -204,15 +206,19 @@ h2 {
     font-size: 4rem;
     text-align: center;
     font-family: "Crimson Text", serif;
-    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
     position: relative;
     &:after {
         position: absolute;
         content: "";
-        top: 130%;
-        right: 48%;
-        width: 50px;
-        border: 2px solid #35bec4;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 5rem;
+        border-bottom: 3px solid #35bec4;
     }
 }
 
@@ -264,7 +270,7 @@ $sp: 375px; // スマホ
 }
 
 #nav {
-    background: #000;
+    background: #2d3754;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -319,7 +325,7 @@ $sp: 375px; // スマホ
  *********************************/
 
 #staff {
-    background-color: #000;
+    background-color: #8c7352;
     h2 {
         color: #fff;
         padding-top: 4rem;
@@ -347,6 +353,7 @@ $sp: 375px; // スマホ
         height: 80vh;
         display: flex;
         flex-direction: column;
+        
         @include sp {
             height: 100%;
         }
@@ -355,6 +362,7 @@ $sp: 375px; // スマホ
             background-size: cover;
             background-repeat: no-repeat;
             height: 60vh;
+
             @include sp {
                 height: 40vh;
             }
@@ -384,84 +392,95 @@ $sp: 375px; // スマホ
  *    concept                             
  *********************************/
 
+.note_wrap {
+    background: #fff;
+    padding: 1em 2em;
+    width: 80%;
+    margin: 30px auto;
+}
+.note {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 97%, #ddd 97%, #ddd 100%);
+    background-size: 100% 2em;
+    line-height: 2;
+}
+.note p {
+    margin-bottom: 2em;
+}
+
+.letter {
+    width: 70vw;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-size: cover;
+    background-clip: content-box;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+    top: 30px;
+    font-size: 2rem;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.letter:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 50px solid transparent;
+    border-bottom: 50px solid #fefefe;
+    bottom: -60px;
+    right: -65px;
+    box-shadow: 0px 7px 6px -9px black;
+    transform: rotate(135deg);
+}
+
+.letter:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 50px solid transparent;
+    border-top: 50px solid #fefefe;
+    top: -60px;
+    left: -65px;
+    box-shadow: 0px -7px 6px -9px black;
+    transform: rotate(135deg);
+}
+
 @mixin center_height {
     height: 60vh;
 }
 
 #concept {
-    background: #ffe3ed;
+    background: #fff;
     h2 {
         padding-top: 4rem;
     }
 }
 
-.concept_lists {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-}
-
-.concept_imgL {
-    background-image: url(images/woman-and-child.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 25vw;
-    @include center_height;
-    @include sp {
-        display: none;
-    }
-}
-
 .concept_top {
+    margin-top: 5rem;
     display: flex;
-    .concept_imgT {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    li {
+        background: #fff;
+        margin: 0 0 12rem 0;
+        width: calc(33.3333333% - 3.4rem);
+        min-width: 34.2rem;
+        list-style: none;
         img {
-            width: 33.3vw;
-        }
-    }
-}
-
-.concept_main {
-    width: 50vw;
-    @include center_height;
-    font-size: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @include sp {
-        width: 100%;
-    }
-    .concept_txt {
-        h3 {
-            margin-bottom: 3rem;
+            border-radius: 1rem;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+            width: 100%;
+            height: 100%;
         }
         p {
-            margin-bottom: 2rem;
-            padding-left: 3rem;
-            position: relative;
-            &:after {
-                position: absolute;
-                content: "";
-                width: 20px;
-                height: 20px;
-                top: 0;
-                left: 0;
-                background-image: url(images/check.svg);
-            }
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 4rem;
         }
-    }
-}
-
-.concept_imgR {
-    background-image: url(images/womenbackhair.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 25vw;
-    @include center_height;
-    @include sp {
-        display: none;
     }
 }
 
@@ -478,18 +497,17 @@ $sp: 375px; // スマホ
 
 .styles {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     list-style: none;
     margin: 5rem 4rem 0 4rem;
     .styles_image {
-        margin: 0 0rem 5rem 0;
-        width: 450px;
+        margin-bottom: 5rem;
         @include sp {
             margin: 0 0 1rem 0;
         }
         img {
-            width: 95%;
+            // width: 95%;
             height: 30vh;
             object-fit: contain;
         }
@@ -502,8 +520,8 @@ $sp: 375px; // スマホ
     content: "";
     top: 0;
     left: 0;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     background: #fff;
     z-index: -1;
@@ -549,6 +567,9 @@ $sp: 375px; // スマホ
 
 .price_cut {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     font-size: 1.6rem;
     margin: 5rem 4rem 0 4rem;
     @include sp {
@@ -563,16 +584,19 @@ $sp: 375px; // スマホ
         }
     }
     .price_cut-photo {
-        width: 50%;
+        width: 45vw;
+        // min-width: 50rem;
         @include sp {
             width: 100%;
         }
         img {
+            border-radius: 1rem;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
             width: 100%;
         }
     }
     .price_cut-fee {
-        width: 50%;
+        width: 45vw;
         @include sp {
             width: 100%;
         }
@@ -586,8 +610,7 @@ $sp: 375px; // スマホ
 }
 
 table {
-    align-items: center;
-    justify-content: center;
+    width: 350px;
     tr {
         text-align: center;
     }
@@ -599,31 +622,34 @@ table {
 }
 
 table th {
+    width: 150px;
     position: relative;
     text-align: left;
-    width: 200px;
     padding-bottom: 2rem;
+    font-weight: bold;
 }
 
-table th:after {
-    display: block;
-    content: "";
-    width: 150px;
-    border: 1px dashed #7d7d7d;
-    position: absolute;
-    top: 6px;
-    right: -170px;
-    @include sp {
-        width: 70px;
-        right: -80px;
-    }
-}
+// table th:after {
+//     display: block;
+//     content: "";
+//     width: 7vw;
+//     border: 1px dashed #7d7d7d;
+//     position: absolute;
+//     top: 6px;
+//     right: -170px;
+//     @include sp {
+//         width: 70px;
+//         right: -80px;
+//     }
+// }
 
 table td {
-    text-align: center;
-    width: 65%;
+    width: 150px;
+    text-align: right;
     padding-bottom: 1rem;
-    padding-left: 19rem;
+    span {
+        font-size: 2rem;
+    }
     @include sp {
         text-align: right;
         padding-left: 0rem;
@@ -729,6 +755,10 @@ div[data-title]:hover:after {
 
 .calendar_close {
     margin: 0 10rem;
+    @include sp {
+        text-align: center;
+        margin: 0 7rem;
+    }
     p {
         padding-bottom: 0.5rem;
         font-size: 1.6rem;
@@ -742,7 +772,7 @@ div[data-title]:hover:after {
  *********************************/
 
 #access {
-    margin-top: 4rem;
+    margin: 4rem 0;
     h2 {
         padding-top: 4rem;
     }
@@ -750,26 +780,37 @@ div[data-title]:hover:after {
 
 .access_map {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    
     @include sp {
         flex-direction: column;
     }
     iframe {
         width: 40vw;
+        min-width: 400px;
         height: 50vh;
+        margin: 0 3rem 5rem 3rem;
         @include sp {
             width: 95vw;
             margin: 0 auto;
         }
     }
     .access_data {
-        text-align-last: left;
-        margin-left: 3rem;
-        @include sp {
-            margin: 4rem auto 4rem auto;
+        text-align: left;
+        margin: 0 3rem;
+        .access_data-address {
+            @include sp {
+                margin: 4rem 4rem 0 4rem;
+            }
         }
         h3 {
-            margin-bottom: 2rem;
+            text-align: left;
+            margin-bottom: 3rem;
+            @include sp {
+                text-align: center;
+                margin-top: 4rem;
+            }
         }
         p {
             font-size: 1.6rem;
@@ -783,8 +824,8 @@ div[data-title]:hover:after {
   *********************************/
 
 footer {
-    background: linear-gradient(to bottom, #666666, #000000); /* BOXのグラデーション */
-    height: 238px;
+    background: #2d3754;
+    height: 25vh;
 }
 
 .footer_w {
@@ -795,10 +836,12 @@ footer {
 }
 
 .footer_first {
+    width: 95vw;
     padding-top: 1.4rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     @include sp {
         flex-direction: column;
         align-items: center;
@@ -815,6 +858,7 @@ footer {
     color: #fff;
     display: flex;
     align-items: center;
+    margin: 2rem 0;
     @include sp {
         display: none;
     }
