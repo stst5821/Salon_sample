@@ -6,7 +6,7 @@
  * Author : blivesta <design@blivesta.com> (http://blivesta.com/)
  */
 
-;(function umd(factory) {
+; (function umd(factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -177,5 +177,16 @@
       $.error('Method ' + method + ' does not exist on jQuery.' + namespace);
     }
   };
-
 }));
+
+// ドロワーメニューのスムーススクロール
+$(function () {
+  var headerHight = 100; // ヘッダの高さを指定する
+  $('.drawer-menu-item').click(function () {
+    //↑ aリンクのclassを指定
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+    $("html, body").animate({ scrollTop: position }, 550, "swing");
+  });
+});

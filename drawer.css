@@ -137,10 +137,8 @@
   margin-right: 2rem;
   position: fixed;
   z-index: 104;
-  top: 30px;
-  /* bottom: 0; */
+  top: 25px;
   right: 10px;
-  margin: ;
   display: block;
   box-sizing: content-box;
   width: 2rem;

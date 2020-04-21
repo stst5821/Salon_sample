@@ -39,6 +39,7 @@ $('.nav_item').click(function () {
   }
 });
 
+
 // TOPへ戻るボタン 画面右下の
 jQuery(window).on("scroll", function ($) {
   if (jQuery(this).scrollTop() > 100) {
@@ -58,4 +59,13 @@ jQuery('.floating').click(function () {
 // ドロワーメニュー
 $(document).ready(function () {
   $('.drawer').drawer();
+  $('.drawer-menu li').on('click', function () {
+    $('.drawer').drawer('close');
+  });
 });
+
+//ヘッダーの高さ分だけコンテンツを下げる
+$(function () {
+  var height = $("#nav").height();
+  $("#home").css("margin-top", height);
+})

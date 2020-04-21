@@ -259,7 +259,7 @@ h3 {
   z-index: 100;
   width: 100%;
   font-size: 1.6rem;
-  height: 14vh;
+  min-height: 100px;
 }
 
 .logo img {
@@ -292,6 +292,20 @@ h3 {
 /*********************************
  *    home                             
  *********************************/
+.home_thema {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .home_thema {
+    display: block;
+  }
+}
+
+.home_thema img {
+  width: 100vw;
+}
+
 .swiper-container,
 .swiper-slide {
   height: 100vh;
@@ -300,7 +314,9 @@ h3 {
 @media (max-width: 375px) {
   .swiper-container,
   .swiper-slide {
+    display: none;
     height: 60vh;
+    width: 100vw;
   }
 }
 
@@ -343,19 +359,8 @@ h3 {
   }
 }
 
-#staff .staff_lists li {
-  margin-right: 2rem;
-}
-
-@media (max-width: 375px) {
-  #staff .staff_lists li {
-    margin-right: 0rem;
-  }
-}
-
 #staff .staff_list1 {
-  margin: 0 1rem 1rem 0;
-  width: 300px;
+  margin: 2rem;
   height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -368,10 +373,13 @@ h3 {
   overflow: hidden;
   -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
           box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  width: calc(25% - 4rem);
+  min-width: 33.8rem;
 }
 
 @media (max-width: 375px) {
   #staff .staff_list1 {
+    margin: 2rem 0;
     height: 100%;
   }
 }
@@ -391,16 +399,10 @@ h3 {
 
 #staff .staff_list1 .staff_data {
   padding: 2rem 0 0 2rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #fff;
-  height: 30vh;
+  height: 20vh;
   background-color: #8c7352;
-}
-
-@media (max-width: 375px) {
-  #staff .staff_list1 .staff_data {
-    height: 30vh;
-  }
 }
 
 #staff .staff_list1 .staff_data p:not(:last-child) {
@@ -409,6 +411,12 @@ h3 {
 
 #staff .staff_list1 .staff_data .staff_name1 {
   font-size: 2.5rem;
+}
+
+@media (max-width: 375px) {
+  #staff .staff_list1 .staff_data .staff_name1 {
+    font-size: 3rem;
+  }
 }
 
 #staff .staff_list1 .staff_data .staff_more {
@@ -525,7 +533,7 @@ h3 {
   background: #fff;
   margin: 0 2rem 12rem 2rem;
   width: calc(33.3333333% - 4rem);
-  min-width: 34.2rem;
+  min-width: 32.7rem;
   list-style: none;
 }
 
@@ -575,7 +583,7 @@ h3 {
 
 @media (max-width: 375px) {
   .styles .styles_image {
-    margin: 0 0 1rem 0;
+    margin-bottom: 4rem;
   }
 }
 
@@ -793,6 +801,7 @@ table td {
   width: 150px;
   text-align: right;
   padding-bottom: 1rem;
+  font-family: "Crimson Text", serif;
 }
 
 table td span {
@@ -887,7 +896,7 @@ table td span {
 }
 
 .jzdcal span {
-  font: 1.6rem "Roboto";
+  font: 2rem "Roboto";
   font-weight: 400;
   color: #f7f3eb;
   text-align: center;
@@ -927,15 +936,7 @@ div[data-title]:hover:after {
 }
 
 .calendar_close {
-  margin: 0 10rem;
   text-align: center;
-}
-
-@media (max-width: 375px) {
-  .calendar_close {
-    text-align: center;
-    margin: 0 7rem;
-  }
 }
 
 .calendar_close p {
@@ -999,6 +1000,7 @@ div[data-title]:hover:after {
 
 @media (max-width: 375px) {
   .access_map .access_data .access_data-address {
+    font-size: 2rem;
     margin: 4rem 2rem 0 2rem;
   }
 }
@@ -1018,6 +1020,12 @@ div[data-title]:hover:after {
 .access_map .access_data p {
   font-size: 1.6rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 375px) {
+  .access_map .access_data p {
+    font-size: 2rem;
+  }
 }
 
 /*********************************
