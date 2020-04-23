@@ -201,12 +201,19 @@ body {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 2.6rem;
   text-align: center;
-  font-family: "Crimson Text", serif;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  font-weight: 500;
   padding-bottom: 2rem;
   margin-bottom: 4rem;
   position: relative;
+}
+
+@media (max-width: 375px) {
+  h2 {
+    font-size: 2.5rem;
+  }
 }
 
 h2:after {
@@ -222,9 +229,20 @@ h2:after {
 }
 
 h3 {
-  font-size: 3.5rem;
+  font-size: 2.4rem;
   text-align: center;
-  font-family: "Crimson Text", serif;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+}
+
+@media (max-width: 375px) {
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 .active {
@@ -238,14 +256,14 @@ h3 {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) {
   .drawer-hamburger {
     display: block;
   }
 }
 
 #nav {
-  background: #2d3754;
+  background: #f091a9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,11 +278,12 @@ h3 {
   width: 100%;
   font-size: 1.6rem;
   min-height: 100px;
+  max-height: 100px;
 }
 
 .logo img {
   max-width: 70vw;
-  max-height: 14vh;
+  max-height: 100px;
 }
 
 .nav_lists {
@@ -278,7 +297,7 @@ h3 {
   list-style: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) {
   .nav_lists {
     display: none;
   }
@@ -308,7 +327,7 @@ h3 {
 
 .swiper-container,
 .swiper-slide {
-  height: 100vh;
+  max-height: 90vh;
 }
 
 @media (max-width: 375px) {
@@ -369,18 +388,16 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 1rem;
   overflow: hidden;
-  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
   width: calc(25% - 4rem);
-  min-width: 33.8rem;
+  min-width: 28.2rem;
 }
 
 @media (max-width: 375px) {
   #staff .staff_list1 {
-    margin: 2rem 0;
+    margin: 2rem 0.5rem;
     height: 100%;
+    width: calc(100% - 1rem);
   }
 }
 
@@ -401,8 +418,15 @@ h3 {
   padding: 2rem 0 0 2rem;
   font-size: 2rem;
   color: #fff;
-  height: 20vh;
+  height: 30vh;
   background-color: #8c7352;
+}
+
+@media (max-width: 375px) {
+  #staff .staff_list1 .staff_data {
+    height: 25vh;
+    font-size: 1.6rem;
+  }
 }
 
 #staff .staff_list1 .staff_data p:not(:last-child) {
@@ -410,13 +434,7 @@ h3 {
 }
 
 #staff .staff_list1 .staff_data .staff_name1 {
-  font-size: 2.5rem;
-}
-
-@media (max-width: 375px) {
-  #staff .staff_list1 .staff_data .staff_name1 {
-    font-size: 3rem;
-  }
+  font-size: 2rem;
 }
 
 #staff .staff_list1 .staff_data .staff_more {
@@ -463,7 +481,6 @@ h3 {
   position: relative;
   margin: auto;
   top: 30px;
-  font-size: 2rem;
   color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -529,26 +546,41 @@ h3 {
       flex-wrap: wrap;
 }
 
+@media (max-width: 375px) {
+  .concept_top {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .concept_top li {
   background: #fff;
-  margin: 0 2rem 12rem 2rem;
+  margin: 0 2rem 4rem 2rem;
   width: calc(33.3333333% - 4rem);
   min-width: 32.7rem;
   list-style: none;
 }
 
+@media (max-width: 375px) {
+  .concept_top li {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .concept_top li img {
-  border-radius: 1rem;
-  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
   width: 100%;
-  height: 100%;
 }
 
 .concept_top li p {
-  font-size: 2rem;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 375px) {
+  .concept_top li p {
+    margin: 1rem 0 4rem 0;
+  }
 }
 
 /*********************************
@@ -575,6 +607,12 @@ h3 {
   margin: 0 2rem;
 }
 
+@media (max-width: 375px) {
+  .styles {
+    margin: 0;
+  }
+}
+
 .styles .styles_image {
   margin: 0 2rem 5rem 2rem;
   width: calc(33.3333333% - 4rem);
@@ -583,15 +621,13 @@ h3 {
 
 @media (max-width: 375px) {
   .styles .styles_image {
-    margin-bottom: 4rem;
+    margin: 0 0.5rem 4rem 0.5rem;
+    width: calc(100% - 1rem);
   }
 }
 
 .styles .styles_image img {
   width: 100%;
-  height: 30vh;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .frame {
@@ -698,27 +734,7 @@ h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 2rem;
-    margin: 0;
-  }
-}
-
-@media (max-width: 375px) {
-  .price_cut .price_cut-photo {
-    width: 100%;
-  }
-}
-
-.price_cut .price_cut-photo img {
-  border-radius: 1rem;
-  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-  width: 100%;
-}
-
-@media (max-width: 375px) {
-  .price_cut .price_cut-photo img {
-    width: 100%;
+    font-size: 1.6rem;
     margin: 0;
   }
 }
@@ -732,9 +748,26 @@ h3 {
 
 @media (max-width: 375px) {
   .price_cut li {
-    width: calc(100% - 2rem);
-    margin: 0 1rem;
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem;
     min-width: initial;
+  }
+}
+
+@media (max-width: 375px) {
+  .price_cut .price_cut-photo {
+    width: 100%;
+  }
+}
+
+.price_cut .price_cut-photo img {
+  width: 100%;
+}
+
+@media (max-width: 375px) {
+  .price_cut .price_cut-photo img {
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -744,8 +777,7 @@ h3 {
 
 @media (max-width: 375px) {
   .price_cut .price_cut-fee {
-    width: calc(100% - 2rem);
-    margin: 0 1rem;
+    margin: 0;
   }
 }
 
@@ -785,27 +817,41 @@ table {
   width: 350px;
 }
 
+@media (max-width: 375px) {
+  table {
+    width: 100%;
+  }
+}
+
 table tr {
   text-align: center;
+  border-bottom: 2px dashed #f091a9;
 }
 
 table th {
   width: 150px;
   position: relative;
   text-align: left;
-  padding-bottom: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
+  padding-top: 2rem;
 }
 
 table td {
   width: 150px;
   text-align: right;
-  padding-bottom: 1rem;
   font-family: "Crimson Text", serif;
+  font-size: 1.6rem;
 }
 
 table td span {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
+}
+
+@media (max-width: 375px) {
+  table td span {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 375px) {
@@ -860,28 +906,24 @@ table td span {
   width: 315px;
   min-width: 315px;
   background: #332f2e;
-  border-radius: 5px;
   overflow: hidden;
   display: block;
   margin-bottom: 10px;
-  -webkit-box-shadow: 0 0 10px #201d1c;
-          box-shadow: 0 0 10px #201d1c;
   margin: 0 2rem 4rem 2rem;
 }
 
 @media (max-width: 375px) {
   .jzdbox1 {
-    margin-bottom: 4rem;
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem 4rem 0.5rem;
   }
 }
 
 .jzdcal {
-  padding: 0 10px 10px 10px;
+  padding: 0 15px 10px 15px;
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
-  background: #749d9e;
-  background: -webkit-gradient(linear, left top, left bottom, from(#749d9e), to(#b3a68b)) !important;
-  background: linear-gradient(#749d9e, #b3a68b) !important;
+  background: #8c7352;
 }
 
 .jzdcalt {
@@ -941,7 +983,6 @@ div[data-title]:hover:after {
 
 .calendar_close p {
   padding-bottom: 0.5rem;
-  font-size: 2rem;
   display: inline-block;
   border-bottom: 2px solid red;
 }
@@ -1000,7 +1041,6 @@ div[data-title]:hover:after {
 
 @media (max-width: 375px) {
   .access_map .access_data .access_data-address {
-    font-size: 2rem;
     margin: 4rem 2rem 0 2rem;
   }
 }
@@ -1022,18 +1062,12 @@ div[data-title]:hover:after {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 375px) {
-  .access_map .access_data p {
-    font-size: 2rem;
-  }
-}
-
 /*********************************
   *    footer                             
   *********************************/
 footer {
-  background: #2d3754;
-  height: 25vh;
+  background: #f091a9;
+  color: #fff;
 }
 
 .footer_w {
@@ -1084,7 +1118,6 @@ footer {
 .footer_list {
   font-size: 1.6rem;
   list-style: none;
-  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1127,7 +1160,7 @@ footer {
 }
 
 .footer_list-social li {
-  margin-right: 1.6rem;
+  margin-right: 3.6rem;
 }
 
 .footer_list-social li:nth-child(3) {
@@ -1153,12 +1186,10 @@ footer {
 
 .footer_info .footer_address p {
   font-size: 1.6rem;
-  color: #fff;
 }
 
 .footer_p {
   font-size: 1.6rem;
-  color: #fff;
 }
 
 .footer_under {
@@ -1168,7 +1199,6 @@ footer {
 
 .footer_copy {
   font-size: 1.4rem;
-  color: #ffffff;
   text-align: center;
   margin-bottom: 1rem;
 }

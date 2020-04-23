@@ -176,6 +176,32 @@ html {
     font-size: 62.5%; //px と remと同じ数字にする
 }
 
+///////////////////////
+// メディアクエリ
+///////////////////////
+
+$pc: 1024px; // PC
+$tab: 910px; // タブレット
+$sp: 375px; // スマホ
+
+@mixin pc {
+    @media (max-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
 /*********************************
  *    初期設定                             
  *********************************/
@@ -203,12 +229,16 @@ body {
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 2.6rem;
     text-align: center;
-    font-family: "Crimson Text", serif;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+    font-weight: 500;
     padding-bottom: 2rem;
     margin-bottom: 4rem;
     position: relative;
+    @include sp {
+        font-size: 2.5rem;
+    }
     &:after {
         position: absolute;
         content: "";
@@ -223,39 +253,21 @@ h2 {
 }
 
 h3 {
-    font-size: 3.5rem;
+    font-size: 2.4rem;
     text-align: center;
-    font-family: "Crimson Text", serif;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+    @include sp {
+        font-size: 2rem;
+    }  
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 2rem;
 }
 
 .active {
     border-bottom: 1.5px solid #35bec4;
-}
-
-///////////////////////
-// メディアクエリ
-///////////////////////
-
-$pc: 1024px; // PC
-$tab: 768px; // タブレット
-$sp: 375px; // スマホ
-
-@mixin pc {
-    @media (max-width: ($pc)) {
-        @content;
-    }
-}
-
-@mixin tab {
-    @media (max-width: ($tab)) {
-        @content;
-    }
-}
-
-@mixin sp {
-    @media (max-width: ($sp)) {
-        @content;
-    }
 }
 
 /*********************************
@@ -270,7 +282,7 @@ $sp: 375px; // スマホ
 }
 
 #nav {
-    background: #2d3754;
+    background: #f091a9;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -279,12 +291,13 @@ $sp: 375px; // スマホ
     width: 100%;
     font-size: 1.6rem;
     min-height: 100px;
+    max-height: 100px;
 }
 
 .logo {
     img {
         max-width: 70vw;
-        max-height: 14vh;
+        max-height: 100px;
     }
 }
 
@@ -307,19 +320,19 @@ $sp: 375px; // スマホ
  *    home                             
  *********************************/
 
- .home_thema {
-     display: none;
-     @include sp {
+.home_thema {
+    display: none;
+    @include sp {
         display: block;
     }
-     img {
-         width: 100vw;
-     }
- }
+    img {
+        width: 100vw;
+    }
+}
 
 .swiper-container,
 .swiper-slide {
-    height: 100vh;
+    max-height: 90vh;
     @include sp {
         display: none;
         height: 60vh;
@@ -357,14 +370,13 @@ $sp: 375px; // スマホ
         height: 80vh;
         display: flex;
         flex-direction: column;
-        border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
         width: calc(25% - 4rem); //◯remはmarginの左右を合計した数字にする
-        min-width: 33.8rem;
+        min-width: 28.2rem;
         @include sp {
-            margin: 2rem 0;
+            margin: 2rem 0.5rem;
             height: 100%;
+            width: calc(100% - 1rem);
         }
         .staff_photo1 {
             background-image: url(images/womenJP_Hairdresser.jpg);
@@ -379,16 +391,17 @@ $sp: 375px; // スマホ
             padding: 2rem 0 0 2rem;
             font-size: 2rem;
             color: #fff;
-            height: 20vh;
+            height: 30vh;
             background-color: #8c7352;
+            @include sp {
+                height: 25vh;
+                font-size: 1.6rem;
+            }
             p:not(:last-child) {
                 margin-bottom: 1rem;
             }
             .staff_name1 {
-                font-size: 2.5rem;
-                @include sp {
-                    font-size: 3rem;
-                }
+                font-size: 2rem;
             }
             .staff_more {
                 padding-top: 3rem;
@@ -431,7 +444,6 @@ $sp: 375px; // スマホ
     position: relative;
     margin: auto;
     top: 30px;
-    font-size: 2rem;
     color: #000;
     display: flex;
     align-items: center;
@@ -482,22 +494,29 @@ $sp: 375px; // スマホ
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    @include sp {
+        width: 100%;
+        margin: 0;
+    }  
     li {
         background: #fff;
-        margin: 0 2rem 12rem 2rem;
+        margin: 0 2rem 4rem 2rem;
         width: calc(33.3333333% - 4rem);
         min-width: 32.7rem;
         list-style: none;
-        img {
-            border-radius: 1rem;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+        @include sp {
             width: 100%;
-            height: 100%;
+            margin: 0;
+        }  
+        img {
+            width: 100%;
         }
         p {
-            font-size: 2rem;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 2rem;
+            @include sp {
+                margin: 1rem 0 4rem 0;
+            }  
         }
     }
 }
@@ -519,17 +538,19 @@ $sp: 375px; // スマホ
     flex-wrap: wrap;
     list-style: none;
     margin: 0 2rem;
+    @include sp {
+        margin: 0;
+    }  
     .styles_image {
         margin: 0 2rem 5rem 2rem;
         width: calc(33.3333333% - 4rem); //◯remはmarginの左右を合計した数字にする
         min-width: 34.2rem;
         @include sp {
-            margin-bottom: 4rem;
+            margin: 0 0.5rem 4rem 0.5rem ;
+            width: calc(100% - 1rem);
         }
         img {
             width: 100%;
-            height: 30vh;
-            object-fit: contain;
         }
     }
 }
@@ -551,7 +572,6 @@ $sp: 375px; // スマホ
     display: inline-block;
     position: relative;
     width: 100%;
-
 }
 .frame:after {
     @include frame_mix;
@@ -598,22 +618,8 @@ $sp: 375px; // スマホ
         width: 100vw;
         flex-direction: column;
         align-items: center;
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin: 0;
-    }
-    .price_cut-photo {
-        @include sp {
-            width: 100%;
-        }
-        img {
-            border-radius: 1rem;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            @include sp {
-                width: 100%;
-                margin: 0;
-            }
-        }
     }
     li {
         list-style: none;
@@ -621,16 +627,27 @@ $sp: 375px; // スマホ
         width: calc(50% - 4rem);
         min-width: 500px;
         @include sp {
-            width: calc(100% - 2rem);
-            margin: 0 1rem;
+            width: calc(100% - 1rem);
+            margin: 0 0.5rem;
             min-width: initial;
+        }
+    }
+    .price_cut-photo {
+        @include sp {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            @include sp {
+                width: 100%;
+                margin: 0;
+            }
         }
     }
     .price_cut-fee {
         margin: 0 2rem;
         @include sp {
-            width: calc(100% - 2rem);
-            margin: 0 1rem;
+            margin: 0;
         }
         .cut {
             margin: 3rem 0;
@@ -655,8 +672,12 @@ $sp: 375px; // スマホ
 
 table {
     width: 350px;
+    @include sp {
+        width: 100%;
+    }  
     tr {
         text-align: center;
+        border-bottom: 2px dashed #f091a9;
     }
 }
 
@@ -664,31 +685,21 @@ table th {
     width: 150px;
     position: relative;
     text-align: left;
-    padding-bottom: 2rem;
+    font-size: 1.6rem;
     font-weight: bold;
+    padding-top: 2rem;
 }
-
-// table th:after {
-//     display: block;
-//     content: "";
-//     width: 7vw;
-//     border: 1px dashed #7d7d7d;
-//     position: absolute;
-//     top: 6px;
-//     right: -170px;
-//     @include sp {
-//         width: 70px;
-//         right: -80px;
-//     }
-// }
 
 table td {
     width: 150px;
     text-align: right;
-    padding-bottom: 1rem;
     font-family: "Crimson Text", serif;
+    font-size: 1.6rem;
     span {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
+        @include sp {
+            font-size: 2rem;
+        }  
     }
     @include sp {
         text-align: right;
@@ -725,25 +736,20 @@ table td {
     width: 315px;
     min-width: 315px;
     background: #332f2e;
-    border-radius: 5px;
     overflow: hidden;
     display: block;
     margin-bottom: 10px;
-    box-shadow: 0 0 10px #201d1c;
     margin: 0 2rem 4rem 2rem;
     @include sp {
-        margin-bottom: 4rem;
+        width: calc(100% - 1rem);
+        margin: 0 0.5rem 4rem 0.5rem;
     }
 }
 
 .jzdcal {
-    padding: 0 10px 10px 10px;
+    padding: 0 15px 10px 15px;
     box-sizing: border-box !important;
-    background: #749d9e;
-    background: -webkit-linear-gradient(#749d9e, #b3a68b) !important;
-    background: -o-linear-gradient(#749d9e, #b3a68b) !important;
-    background: -moz-linear-gradient(#749d9e, #b3a68b) !important;
-    background: linear-gradient(#749d9e, #b3a68b) !important;
+    background: #8c7352;
 }
 
 .jzdcalt {
@@ -800,7 +806,6 @@ div[data-title]:hover:after {
     text-align: center;
     p {
         padding-bottom: 0.5rem;
-        font-size: 2rem;
         display: inline-block;
         border-bottom: 2px solid red;
     }
@@ -841,7 +846,6 @@ div[data-title]:hover:after {
         margin: 0 3rem;
         .access_data-address {
             @include sp {
-                font-size: 2rem;
                 margin: 4rem 2rem 0 2rem;
             }
         }
@@ -855,10 +859,7 @@ div[data-title]:hover:after {
         }
         p {
             font-size: 1.6rem;
-            margin-bottom: 2rem;
-            @include sp {
-                font-size: 2rem;
-            }
+            margin-bottom: 2rem;           
         }
     }
 }
@@ -868,8 +869,8 @@ div[data-title]:hover:after {
   *********************************/
 
 footer {
-    background: #2d3754;
-    height: 25vh;
+    background: #f091a9;
+    color: #fff;
 }
 
 .footer_w {
@@ -899,7 +900,6 @@ footer {
 .footer_list {
     font-size: 1.6rem;
     list-style: none;
-    color: #fff;
     display: flex;
     align-items: center;
     margin: 2rem 0;
@@ -923,7 +923,7 @@ footer {
         margin: 2rem 0;
     }
     li {
-        margin-right: 1.6rem;
+        margin-right: 3.6rem;
         &:nth-child(3) {
             margin-right: 0;
         }
@@ -940,14 +940,12 @@ footer {
         margin-bottom: 1rem;
         p {
             font-size: 1.6rem;
-            color: #fff;
         }
     }
 }
 
 .footer_p {
     font-size: 1.6rem;
-    color: #fff;
 }
 
 .footer_under {
@@ -957,7 +955,6 @@ footer {
 
 .footer_copy {
     font-size: 1.4rem;
-    color: #ffffff;
     text-align: center;
     margin-bottom: 1rem;
 }
