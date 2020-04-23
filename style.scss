@@ -258,7 +258,7 @@ h3 {
     font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
     @include sp {
         font-size: 2rem;
-    }  
+    }
 }
 
 p {
@@ -497,7 +497,7 @@ p {
     @include sp {
         width: 100%;
         margin: 0;
-    }  
+    }
     li {
         background: #fff;
         margin: 0 2rem 4rem 2rem;
@@ -507,7 +507,7 @@ p {
         @include sp {
             width: 100%;
             margin: 0;
-        }  
+        }
         img {
             width: 100%;
         }
@@ -516,7 +516,7 @@ p {
             margin-top: 2rem;
             @include sp {
                 margin: 1rem 0 4rem 0;
-            }  
+            }
         }
     }
 }
@@ -540,13 +540,13 @@ p {
     margin: 0 2rem;
     @include sp {
         margin: 0;
-    }  
+    }
     .styles_image {
         margin: 0 2rem 5rem 2rem;
         width: calc(33.3333333% - 4rem); //◯remはmarginの左右を合計した数字にする
         min-width: 34.2rem;
         @include sp {
-            margin: 0 0.5rem 4rem 0.5rem ;
+            margin: 0 0.5rem 4rem 0.5rem;
             width: calc(100% - 1rem);
         }
         img {
@@ -668,42 +668,39 @@ p {
     @include sp {
         margin-bottom: 3rem;
     }
-}
-
-table {
-    width: 350px;
-    @include sp {
-        width: 100%;
-    }  
-    tr {
-        text-align: center;
-        border-bottom: 2px dashed #f091a9;
-    }
-}
-
-table th {
-    width: 150px;
-    position: relative;
-    text-align: left;
-    font-size: 1.6rem;
-    font-weight: bold;
-    padding-top: 2rem;
-}
-
-table td {
-    width: 150px;
-    text-align: right;
-    font-family: "Crimson Text", serif;
-    font-size: 1.6rem;
-    span {
-        font-size: 2.2rem;
+    table {
+        width: 350px;
         @include sp {
-            font-size: 2rem;
-        }  
-    }
-    @include sp {
-        text-align: right;
-        padding-left: 0rem;
+            width: 100%;
+        }
+        tr {
+            text-align: center;
+            border-bottom: 2px dashed #f091a9;
+        }
+        th {
+            width: 150px;
+            position: relative;
+            text-align: left;
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding-top: 2rem;
+        }
+        td {
+            width: 150px;
+            text-align: right;
+            font-family: "Crimson Text", serif;
+            font-size: 1.6rem;
+            span {
+                font-size: 2.2rem;
+                @include sp {
+                    font-size: 2rem;
+                }
+            }
+            @include sp {
+                text-align: right;
+                padding-left: 0rem;
+            }
+        }
     }
 }
 
@@ -711,8 +708,8 @@ table td {
  *    calender                             
  *********************************/
 
-#calendar {
-    margin-top: 8rem;
+#calendar_sec {
+    margin-top: 5rem;
     @include sp {
         margin-top: 3rem;
     }
@@ -722,84 +719,42 @@ table td {
 }
 
 .calendar_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 4rem;
-    @include sp {
-        flex-direction: column;
-        align-items: center;
+    #calendar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-}
 
-.jzdbox1 {
-    width: 315px;
-    min-width: 315px;
-    background: #332f2e;
-    overflow: hidden;
-    display: block;
-    margin-bottom: 10px;
-    margin: 0 2rem 4rem 2rem;
-    @include sp {
-        width: calc(100% - 1rem);
-        margin: 0 0.5rem 4rem 0.5rem;
+    section {
+        margin: 10px;
     }
-}
 
-.jzdcal {
-    padding: 0 15px 10px 15px;
-    box-sizing: border-box !important;
-    background: #8c7352;
-}
+    h1 {
+        font-size: 18px;
+    }
 
-.jzdcalt {
-    font: 2rem "Roboto";
-    font-weight: 700;
-    color: #f7f3eb;
-    display: block;
-    margin: 18px 0 0 0;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-}
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
 
-.jzdcal span {
-    font: 2rem "Roboto";
-    font-weight: 400;
-    color: #f7f3eb;
-    text-align: center;
-    width: 42px;
-    height: 42px;
-    float: left;
-    overflow: hidden;
-    line-height: 40px;
-}
+    td {
+        border: 1px solid #ddd;
+        padding: 5px;
+        text-align: center;
+    }
 
-.jzdcal .jzdb:before {
-    opacity: 0.3;
-    content: "o";
-}
+    td:first-child {
+        color: red;
+    }
 
-.circle {
-    border: 1px solid #f7f3eb;
-    box-sizing: border-box !important;
-    border-radius: 200px !important;
-}
+    td:last-child {
+        color: royalblue;
+    }
 
-span[data-title]:hover:after,
-div[data-title]:hover:after {
-    font: 11px "Roboto";
-    font-weight: 400;
-    content: attr(data-title);
-    position: absolute;
-    margin: 0 0 100px;
-    background: #282423;
-    border: 1px solid #f7f3eb;
-    color: #f7f3eb;
-    padding: 5px;
-    z-index: 9999;
-    min-width: 150px;
-    max-width: 150px;
+    td.is-disabled {
+        color: #ccc;
+    }
 }
 
 .calendar_close {
@@ -859,7 +814,7 @@ div[data-title]:hover:after {
         }
         p {
             font-size: 1.6rem;
-            margin-bottom: 2rem;           
+            margin-bottom: 2rem;
         }
     }
 }

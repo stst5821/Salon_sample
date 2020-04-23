@@ -813,22 +813,22 @@ p {
   }
 }
 
-table {
+.table table {
   width: 350px;
 }
 
 @media (max-width: 375px) {
-  table {
+  .table table {
     width: 100%;
   }
 }
 
-table tr {
+.table table tr {
   text-align: center;
   border-bottom: 2px dashed #f091a9;
 }
 
-table th {
+.table table th {
   width: 150px;
   position: relative;
   text-align: left;
@@ -837,25 +837,25 @@ table th {
   padding-top: 2rem;
 }
 
-table td {
+.table table td {
   width: 150px;
   text-align: right;
   font-family: "Crimson Text", serif;
   font-size: 1.6rem;
 }
 
-table td span {
+.table table td span {
   font-size: 2.2rem;
 }
 
 @media (max-width: 375px) {
-  table td span {
+  .table table td span {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 375px) {
-  table td {
+  .table table td {
     text-align: right;
     padding-left: 0rem;
   }
@@ -864,21 +864,21 @@ table td span {
 /*********************************
  *    calender                             
  *********************************/
-#calendar {
-  margin-top: 8rem;
+#calendar_sec {
+  margin-top: 5rem;
 }
 
 @media (max-width: 375px) {
-  #calendar {
+  #calendar_sec {
     margin-top: 3rem;
   }
 }
 
-#calendar h2 {
+#calendar_sec h2 {
   padding-top: 4rem;
 }
 
-.calendar_wrapper {
+.calendar_wrapper #calendar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -887,94 +887,37 @@ table td span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 4rem;
 }
 
-@media (max-width: 375px) {
-  .calendar_wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
+.calendar_wrapper section {
+  margin: 10px;
 }
 
-.jzdbox1 {
-  width: 315px;
-  min-width: 315px;
-  background: #332f2e;
-  overflow: hidden;
-  display: block;
-  margin-bottom: 10px;
-  margin: 0 2rem 4rem 2rem;
+.calendar_wrapper h1 {
+  font-size: 18px;
 }
 
-@media (max-width: 375px) {
-  .jzdbox1 {
-    width: calc(100% - 1rem);
-    margin: 0 0.5rem 4rem 0.5rem;
-  }
+.calendar_wrapper table {
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
-.jzdcal {
-  padding: 0 15px 10px 15px;
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
-  background: #8c7352;
-}
-
-.jzdcalt {
-  font: 2rem "Roboto";
-  font-weight: 700;
-  color: #f7f3eb;
-  display: block;
-  margin: 18px 0 0 0;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.jzdcal span {
-  font: 2rem "Roboto";
-  font-weight: 400;
-  color: #f7f3eb;
-  text-align: center;
-  width: 42px;
-  height: 42px;
-  float: left;
-  overflow: hidden;
-  line-height: 40px;
-}
-
-.jzdcal .jzdb:before {
-  opacity: 0.3;
-  content: "o";
-}
-
-.circle {
-  border: 1px solid #f7f3eb;
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
-  border-radius: 200px !important;
-}
-
-span[data-title]:hover:after,
-div[data-title]:hover:after {
-  font: 11px "Roboto";
-  font-weight: 400;
-  content: attr(data-title);
-  position: absolute;
-  margin: 0 0 100px;
-  background: #282423;
-  border: 1px solid #f7f3eb;
-  color: #f7f3eb;
+.calendar_wrapper td {
+  border: 1px solid #ddd;
   padding: 5px;
-  z-index: 9999;
-  min-width: 150px;
-  max-width: 150px;
+  text-align: center;
+}
+
+.calendar_wrapper td:first-child {
+  color: red;
+}
+
+.calendar_wrapper td:last-child {
+  color: royalblue;
+}
+
+.calendar_wrapper td.is-disabled {
+  color: #ccc;
 }
 
 .calendar_close {
