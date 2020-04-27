@@ -179,6 +179,11 @@ html {
 /*********************************
  *    初期設定                             
  *********************************/
+@font-face {
+  font-family: "hui";
+  src: url("fonts/HuiFont29.ttf");
+}
+
 html {
   font-size: 62.5%;
   font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
@@ -313,6 +318,42 @@ p {
  *********************************/
 .home_thema {
   display: none;
+  background-image: url(images/oyako.jpg);
+  background-size: cover;
+  background-position: 0 25%;
+  width: 100%;
+  height: 50vh;
+  margin-bottom: 4rem;
+}
+
+.home_thema .slide_mes-sp {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.home_thema .slide_mes-sp .slide_ttl-sp {
+  font-size: 2rem;
+  line-height: 3.3rem;
+  font-family: "hui", sans-serif;
+  margin-bottom: 3rem;
+}
+
+.home_thema .slide_mes-sp .slide_txt-sp {
+  display: inline-block;
+  text-align: left;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.home_thema:before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 375px) {
@@ -325,25 +366,63 @@ p {
   width: 100vw;
 }
 
-.swiper-container,
-.swiper-slide {
-  max-height: 90vh;
+.slide_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(images/mother_babyTOP.jpg);
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide_wrapper:before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 375px) {
-  .swiper-container,
-  .swiper-slide {
+  .slide_wrapper {
     display: none;
     height: 60vh;
     width: 100vw;
   }
 }
 
-.swiper-slide > img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
+.slide_wrapper .slide_mes {
+  width: 50vw;
+  min-width: 376px;
+  color: #000;
+  z-index: 1;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 2rem 0;
+  margin-left: 1rem;
+  text-align: center;
+  background: #000;
+}
+
+.slide_wrapper .slide_mes .slide_ttl {
+  font-size: 3.3rem;
+  line-height: 3.3rem;
+  font-family: "hui", sans-serif;
+  margin-bottom: 3rem;
+}
+
+.slide_wrapper .slide_mes .slide_txt {
+  display: inline-block;
+  text-align: left;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
 }
 
 /*********************************
@@ -707,7 +786,7 @@ p {
   padding-top: 4rem;
 }
 
-.price_cut {
+#price ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -723,8 +802,15 @@ p {
   margin: 0 2rem;
 }
 
+#price ul:nth-child(3) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
 @media (max-width: 375px) {
-  .price_cut {
+  #price ul {
     width: 100vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -738,7 +824,7 @@ p {
   }
 }
 
-.price_cut li {
+#price ul li {
   list-style: none;
   margin: 2rem 2rem 0 2rem;
   width: calc(50% - 4rem);
@@ -746,7 +832,7 @@ p {
 }
 
 @media (max-width: 375px) {
-  .price_cut li {
+  #price ul li {
     width: calc(100% - 1rem);
     margin: 0 0.5rem;
     min-width: initial;
@@ -754,47 +840,40 @@ p {
 }
 
 @media (max-width: 375px) {
-  .price_cut .price_cut-photo {
+  #price ul .price_cut-photo {
     width: 100%;
   }
 }
 
-.price_cut .price_cut-photo img {
+#price ul .price_cut-photo img {
   width: 100%;
 }
 
 @media (max-width: 375px) {
-  .price_cut .price_cut-photo img {
+  #price ul .price_cut-photo img {
     width: 100%;
     margin: 0;
   }
 }
 
-.price_cut .price_cut-fee {
+#price ul .price_cut-fee {
   margin: 0 2rem;
 }
 
 @media (max-width: 375px) {
-  .price_cut .price_cut-fee {
+  #price ul .price_cut-fee {
     margin: 0;
   }
 }
 
-.price_cut .price_cut-fee .cut {
+#price ul .price_cut-fee .cut {
   margin: 3rem 0;
 }
 
 @media (max-width: 375px) {
-  .price_cut .price_cut-fee .cut {
+  #price ul .price_cut-fee .cut {
     margin-top: 3rem;
   }
-}
-
-.reverse {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
 }
 
 .table {
