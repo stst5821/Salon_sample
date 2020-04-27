@@ -206,6 +206,10 @@ $sp: 375px; // スマホ
  *    初期設定                             
  *********************************/
 
+// Open suns フォント
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+// ふい字フォント
 @font-face {
     font-family: "hui";
     src: url("fonts/HuiFont29.ttf");
@@ -333,14 +337,25 @@ p {
     background-size: cover;
     background-position: 0 25%;
     width: 100%;
-    height: 50vh;
-    margin-bottom: 4rem;
+    height: 290px;
+    margin-bottom: 28rem;
+    position: relative;
     .slide_mes-sp {
-        text-align: center;
-        width: 100%;
+        position: absolute;
+        top: 255px;
+        width: calc(100% - 4rem);
         height: 100%;
+        margin: 0 2rem;
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 25px;
+            height: 1px;
+            background-color: #000000;
+            vertical-align: middle;
+        }
         .slide_ttl-sp {
-            font-size: 2rem;
+            font-size: 2.2rem;
             line-height: 3.3rem;
             font-family: "hui", sans-serif;
             margin-bottom: 3rem;
@@ -350,16 +365,8 @@ p {
             text-align: left;
             font-size: 1.6rem;
             margin-bottom: 2rem;
+            color: #000;
         }
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.1);
     }
     @include sp {
         display: block;
@@ -390,20 +397,16 @@ p {
     }
     @include sp {
         display: none;
-        height: 60vh;
-        width: 100vw;
     }
     .slide_mes {
         width: 50vw;
         min-width: 376px;
-        color: #000;
         z-index: 1;
         border-top: 2px solid #000;
         border-bottom: 2px solid #000;
         padding: 2rem 0;
         margin-left: 1rem;
         text-align: center;
-        background: #000;
         .slide_ttl {
             font-size: 3.3rem;
             line-height: 3.3rem;
@@ -592,6 +595,20 @@ p {
             }
         }
     }
+    .concept_img-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding-top: 60%; /* 比率 */
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 /*********************************
@@ -599,7 +616,7 @@ p {
  *********************************/
 
 #style {
-    margin-top: 8rem;
+    margin-top: 2rem;
     h2 {
         padding-top: 4rem;
     }
@@ -674,7 +691,7 @@ p {
  *********************************/
 
 #price {
-    margin-top: 8rem;
+    margin-top: 2rem;
     h2 {
         padding-top: 4rem;
     }
@@ -684,7 +701,7 @@ p {
         justify-content: center;
         align-items: center;
         font-size: 2rem;
-        margin: 0 2rem;
+        margin: 0 2rem 4rem 2rem;
         &:nth-child(3) {
             flex-direction: row-reverse;
         }
@@ -693,7 +710,8 @@ p {
             flex-direction: column;
             align-items: center;
             font-size: 1.6rem;
-            margin: 0;
+            margin: 2rem 0.5rem 0 0.5rem;
+            width: calc(100% - 1rem);
         }
         li {
             list-style: none;
@@ -701,8 +719,8 @@ p {
             width: calc(50% - 4rem);
             min-width: 500px;
             @include sp {
-                width: calc(100% - 1rem);
-                margin: 0 0.5rem;
+                width: 100%;
+                margin: 0;
                 min-width: initial;
             }
         }
@@ -759,10 +777,10 @@ p {
         td {
             width: 150px;
             text-align: right;
-            font-family: "Crimson Text", serif;
+            font-family: "Open Sans", sans-serif;
             font-size: 1.6rem;
             span {
-                font-size: 2.2rem;
+                font-size: 2rem;
                 @include sp {
                     font-size: 2rem;
                 }
@@ -771,6 +789,9 @@ p {
                 text-align: right;
                 padding-left: 0rem;
             }
+        }
+        .yu_gothic {
+            font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
         }
     }
 }
