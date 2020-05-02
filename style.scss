@@ -181,8 +181,8 @@ html {
 ///////////////////////
 
 $pc: 1024px; // PC
-$tab: 910px; // タブレット
-$sp: 375px; // スマホ
+$tab: 1013px; // タブレット
+$sp: 414px; // スマホ
 
 @mixin pc {
     @media (max-width: ($pc)) {
@@ -276,7 +276,19 @@ p {
 }
 
 .active {
-    border-bottom: 1.5px solid #35bec4;
+    // border-bottom: 1.5px solid #35bec4;
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 5rem;
+        border-bottom: 3px solid #35bec4;
+    }
 }
 
 /*********************************
@@ -288,41 +300,96 @@ p {
     @include tab {
         display: block;
     }
+    @include sp() {
+        margin-right: 1rem;
+    }
 }
 
 #nav {
     background: #f091a9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     z-index: 100;
     width: 100%;
     font-size: 1.6rem;
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 116px;
+    max-height: 200px;
+}
+
+.nav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_address {
+    margin: 0.3rem 0 0rem 0.2rem;
+    color: #ffffff;
+    p {
+        font-size: 1.4rem;
+    }
 }
 
 .logo {
     img {
+        min-width: 200px;
         max-width: 70vw;
-        max-height: 100px;
+        min-height: 70px;
+        max-height: 70px;
     }
 }
 
-.nav_lists {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    list-style: none;
+// navバー hoverエフェクト
+// 参考サイト：https://www.nxworld.net/tips/css-horizontal-menu-hover-effect-example.html
+
+.snip1198 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
     @include tab {
         display: none;
     }
-
-    .nav_item {
-        margin-right: 2rem;
-        font-size: 1.6rem;
-    }
+}
+.snip1198 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+.snip1198 li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0.4em 0.8em;
+    padding: 0;
+}
+.snip1198 a {
+    padding: 0 0.7em;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+}
+.snip1198 a:before {
+    position: absolute;
+    content: "";
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    opacity: 0;
+    left: 15%;
+    right: 15%;
+    top: 0;
+    bottom: 0;
+    border-left: 3px solid #35bec4;
+    border-right: 3px solid #35bec4;
+}
+.snip1198 a:hover,
+.snip1198 .current a {
+    color: #ffffff;
+}
+.snip1198 a:hover:before,
+.snip1198 .current a:before {
+    opacity: 1;
+    left: 0;
+    right: 0;
 }
 
 /*********************************
@@ -381,27 +448,18 @@ p {
 .slide_wrapper {
     display: flex;
     align-items: center;
-    background-image: url(images/mother_babyTOP.jpg);
+    background: url(images/mother_babyTOPnew.jpg);
     background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 100vh;
-    &:before {
-        content: "";
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.1);
-    }
+    background-position: center top;
+    height: 50vh;
+
     @include sp {
         display: none;
     }
     .slide_mes {
+        z-index: 1;
         width: 50vw;
         min-width: 376px;
-        z-index: 1;
         border-top: 2px solid #000;
         border-bottom: 2px solid #000;
         padding: 2rem 0;
@@ -417,7 +475,6 @@ p {
             display: inline-block;
             text-align: left;
             font-size: 1.6rem;
-            margin-bottom: 2rem;
         }
     }
 }
@@ -444,12 +501,13 @@ p {
 
     .staff_list1 {
         margin: 2rem;
-        height: 80vh;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         width: calc(25% - 4rem); //◯remはmarginの左右を合計した数字にする
         min-width: 28.2rem;
+        border-radius: 0.5rem;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         @include sp {
             margin: 2rem 0.5rem;
             height: 100%;
@@ -459,7 +517,7 @@ p {
             background-image: url(images/womenJP_Hairdresser.jpg);
             background-size: cover;
             background-repeat: no-repeat;
-            height: 60vh;
+            height: 50vh;
             @include sp {
                 height: 40vh;
             }
@@ -468,7 +526,7 @@ p {
             padding: 2rem 0 0 2rem;
             font-size: 2rem;
             color: #fff;
-            height: 33vh;
+            height: 25vh;
             background-color: #8c7352;
             @include sp {
                 font-size: 1.6rem;
@@ -489,70 +547,6 @@ p {
 /*********************************
  *    concept                             
  *********************************/
-
-.note_wrap {
-    background: #fff;
-    padding: 1em 2em;
-    width: 80%;
-    margin: 30px auto;
-    @include sp {
-        width: 100%;
-        padding: 0;
-    }
-}
-.note {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 97%, #ddd 97%, #ddd 100%);
-    background-size: 100% 2em;
-    line-height: 2;
-}
-.note p {
-    margin-bottom: 2em;
-}
-
-.letter {
-    width: 70vw;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-size: cover;
-    background-clip: content-box;
-    background-color: #fff;
-    box-sizing: border-box;
-    position: relative;
-    margin: auto;
-    top: 30px;
-    color: #000;
-    display: flex;
-    align-items: center;
-    @include sp {
-        width: calc(100vw - 2rem);
-        margin: 0 1rem;
-        padding: 0 2rem;
-    }
-}
-
-.letter:after {
-    content: "";
-    display: block;
-    position: absolute;
-    border: 50px solid transparent;
-    border-bottom: 50px solid #fefefe;
-    bottom: -60px;
-    right: -65px;
-    box-shadow: 0px 7px 6px -9px black;
-    transform: rotate(135deg);
-}
-
-.letter:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border: 50px solid transparent;
-    border-top: 50px solid #fefefe;
-    top: -60px;
-    left: -65px;
-    box-shadow: 0px -7px 6px -9px black;
-    transform: rotate(135deg);
-}
 
 @mixin center_height {
     height: 60vh;
@@ -599,6 +593,7 @@ p {
         position: relative;
         overflow: hidden;
         padding-top: 60%; /* 比率 */
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         img {
             position: absolute;
             top: 50%;
@@ -725,11 +720,21 @@ p {
             }
         }
         .price_cut-photo {
+            position: relative;
+            overflow: hidden;
+            padding-top: 70%; /* 比率 */
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             @include sp {
                 width: 100%;
             }
             img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 width: 100%;
+                height: 100%;
+                object-fit: cover;
                 @include sp {
                     width: 100%;
                     margin: 0;
@@ -742,7 +747,7 @@ p {
                 margin: 0;
             }
             .cut {
-                margin: 3rem 0;
+                margin-bottom: 1rem;
                 @include sp {
                     margin-top: 3rem;
                 }
@@ -772,7 +777,7 @@ p {
             text-align: left;
             font-size: 1.6rem;
             font-weight: bold;
-            padding-top: 2rem;
+            padding: 3rem 0 0.5rem 0;
         }
         td {
             width: 150px;
@@ -791,6 +796,7 @@ p {
             }
         }
         .yu_gothic {
+            font-size: 2rem;
             font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
         }
     }
@@ -819,6 +825,7 @@ p {
         min-width: 400px;
         height: 50vh;
         margin: 0 3rem 5rem 3rem;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         @include sp {
             width: calc(100vw - 1rem);
             height: 40vh;
@@ -948,24 +955,39 @@ footer {
 }
 
 .footer_under-totop {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    right: 19px; /* 右寄せ */
-    bottom: 19px;
+    right: 5px; /* 右寄せ */
+    bottom: 0px;
     @include sp {
         display: none;
     }
 }
 
 .fa-twitter-square {
-    color: #1da1f2;
+    color: #fff;
+    &:hover {
+        color: #1da1f2;
+        transform: scale(1.2);
+        transition-duration: 0.5s;
+    }
 }
 .fa-facebook-square {
-    color: #1877f2;
+    color: #fff;
+    &:hover {
+        color: #1877f2;
+        transform: scale(1.2);
+        transition-duration: 0.5s;
+    }
 }
 .fa-instagram {
-    color: #d93177;
+    color: #fff;
+    &:hover {
+        color: #d93177;
+        transform: scale(1.2);
+        transition-duration: 0.5s;
+    }
 }
 
 .floating {
